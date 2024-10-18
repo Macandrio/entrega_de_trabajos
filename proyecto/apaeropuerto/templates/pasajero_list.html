@@ -104,13 +104,12 @@
         {% for pasajero in pasajeros %}
         <article>
             <h2>Pasajero</h2>
-            <p><strong>ID:</strong> {{ pasajero.id }}</p>
-            <p><strong>Nombre:</strong> {{ pasajero.nombre }}</p>
-            <p><strong>Apellido:</strong> {{ pasajero.apellido }}</p>
-            <p><strong>Correo:</strong> {{ pasajero.email }}</p>
-            <p><strong>Telefono:</strong> {{ pasajero.telefono }}</p>
-            <p><strong>Fecha de Nacimiento:</strong> {{ pasajero.fecha_nacimiento }}</p>
-            
+            <p><strong>ID:</strong> {{ pasajero.id }}</p> <!-- ID del pasajero -->
+            <p><strong>Nombre:</strong> {{ pasajero.nombre }}</p> <!-- Nombre del pasajero -->
+            <p><strong>Apellido:</strong> {% if pasajero.apellido %} {{ pasajero.apellido }} {% else %} No disponible {% endif %}</p> <!-- Apellido del pasajero -->
+            <p><strong>Correo:</strong> {{ pasajero.email }}</p> <!-- Correo del pasajero -->
+            <p><strong>Teléfono:</strong> {% if pasajero.telefono %} {{ pasajero.telefono }} {% else %} No disponible {% endif %}</p> <!-- Teléfono del pasajero -->
+            <p><strong>Fecha de Nacimiento:</strong> {% if pasajero.fecha_nacimiento %} {{ pasajero.fecha_nacimiento }} {% else %} No disponible {% endif %}</p> <!-- Fecha de nacimiento del pasajero -->
         </article>
         {% endfor %}
         <div class="refresh">

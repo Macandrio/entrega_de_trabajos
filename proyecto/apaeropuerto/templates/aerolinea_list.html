@@ -99,22 +99,19 @@
         <a href="/">Sistema de Aeropuertos</a>
     </header>
 
-    <div class="container">
+    <main class="container">
         <h1>Listado de Aerolíneas</h1>
         {% for aerolinea in aerolineas %}
-        <article>
-            <h2>Aerolínea</h2>
-            <p><strong>ID:</strong> {{ aerolinea.id }}</p>
-            <p><strong>Nombre:</strong> {{ aerolinea.nombre }}</p>
-            <p><strong>País:</strong> {{ aerolinea.pais }}</p>
-            <p><strong>Codigo:</strong> {{ aerolinea.codigo }}</p>
-            <p><strong>Fundado:</strong> {{ aerolinea.fecha_fundacion }}</p>
-        </article>
-        {% endfor %}
-        <div class="refresh">
-            <a href="{% url 'lista_aerolinea' %}">Refrescar la Lista</a>
-        </div>
-    </div>
+            <article>
+                <h2>Aerolínea {{ forloop.counter }}</h2> <!-- Contador para enumerar aerolíneas -->
+                <p><strong>ID:</strong> {{ aerolinea.id }}</p>
+                <p><strong>Nombre:</strong> {{ aerolinea.nombre }}</p>
+                <p><strong>País:</strong> {{ aerolinea.pais }}</p>
+                <p><strong>Código:</strong> {{ aerolinea.codigo }}</p>
+                <p><strong>Fundado:</strong> {{ aerolinea.fecha_fundacion|date:"d/m/Y" }}</p> <!-- Formato de fecha -->
+            </article>
+            {% endfor %}
+    </main>
 
     <footer>
         &copy; 2024 - Proyecto de Aeropuertos

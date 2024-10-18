@@ -106,9 +106,9 @@
             <h2>Aeropuerto</h2>
             <p><strong>ID:</strong> {{ aeropuerto.id }}</p>
             <p><strong>Nombre:</strong> {{ aeropuerto.nombre }}</p>
-            <p><strong>Ciudad:</strong> {{ aeropuerto.ciudad }}</p>
+            <p><strong>Ciudad:</strong> {{ aeropuerto.ciudades }}</p>
             <p><strong>País:</strong> {{ aeropuerto.pais }}</p>
-            <p><strong>Codigo iata:</strong> {{ aeropuerto.codigo_iata }}</p>
+            <p><strong>Capacidad máxima:</strong> {{ aeropuerto.capacidad_maxima|default:150 }}</p>
         </article>
         {% endfor %}
         <div class="refresh">

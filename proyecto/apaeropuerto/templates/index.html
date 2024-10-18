@@ -79,11 +79,11 @@
 <body>
 
     <header>
-        <a href="/">Sistema de Gestión de Aeropuertos</a>
+        <h1><a href="/">Sistema de Gestión de Aeropuertos</a></h1>
     </header>
 
     <div class="container">
-        <h1>Páginas del Sistema del Aeropuerto</h1>
+        <h2>Páginas del Sistema del Aeropuerto</h2> <!-- Cambiado de h1 a h2 -->
         <div class="link-list">
             <div class="link-item">
                 <a href="{% url 'lista_aeropuerto' %}">Aeropuertos</a>
@@ -98,10 +98,10 @@
                 <a href="{% url 'lista_equipaje' %}">Equipajes</a>
             </div>
             <div class="link-item">
-                <a href="{% url 'lista_aerolinea' %}">Aerolíneas</a>
+                <a href="{% url 'lista_aerolineas' %}">Aerolíneas</a>  
             </div>
             <div class="link-item">
-                <a href="{% url 'lista_vuelo_aerolinea' %}">Vuelos de Aerolínea</a>
+                <a href="{% url 'lista_vuelos_aerolineas' %}">Vuelos de Aerolínea</a>  
             </div>
             <div class="link-item">
                 <a href="{% url 'lista_reserva' %}">Reservas</a>
@@ -119,7 +119,6 @@
                 <a href="{% url 'lista_ruta' %}">Rutas</a>
             </div>
         </div>
-    </div>
 
     <footer>
         &copy; 2024 - Sistema de Aeropuertos

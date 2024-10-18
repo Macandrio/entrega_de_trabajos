@@ -104,12 +104,12 @@
         {% for vuelo in vuelos %}
         <article>
             <h2>Vuelo</h2>
-            <p><strong>ID:</strong> {{ vuelo.id }}</p>
-            <p><strong>Número de Vuelo:</strong> {{ vuelo.numero_vuelo }}</p>
+            <p><strong>Vuelo en el Dia:</strong> {{ vuelo.numero_vuelo_dia }}</p>
             <p><strong>Hora de Salida:</strong> {{ vuelo.hora_salida }}</p>
             <p><strong>Hora de Llegada:</strong> {{ vuelo.hora_llegada }}</p>
             <p><strong>Aeropuerto:</strong> {{ vuelo.aeropuerto.nombre }}</p>
-            <p><strong>Estado:</strong> {{ vuelo.aeropuerto.estado }}</p>
+            <p><strong>Estado:</strong> {% if vuelo.volando %} Volando {% else %} No Volando {% endif %}</p>
+            <p><strong>Duración:</strong> {{ vuelo.duracion }}</p> <!-- Duración no editable -->
         </article>
         {% endfor %}
         <div class="refresh">

@@ -1,46 +1,136 @@
 from django.db import models
+from django.utils  import timezone
+from django.core.exceptions import ValidationError
+from django.core.validators import MaxLengthValidator, RegexValidator
+
 
 # Modelo Aeropuerto
 class Aeropuerto(models.Model):
-    nombre = models.CharField(max_length=100)
-    ciudad = models.CharField(max_length=100)
-    pais = models.CharField(max_length=100)
-    codigo_iata = models.CharField(max_length=3)  
+    PAISES = [
+    ("ES", "España"),
+    ("FR", "Francia"),
+    ("IT", "Italia"),
+    ("DE", "Alemania"),
+    ("PT", "Portugal"),
+    ("NL", "Países Bajos"),
+    ("BE", "Bélgica"),
+    ("SE", "Suecia"),
+    ("AT", "Austria"),
+    ("CH", "Suiza"),
+    ]
+    CIUDADES = [
+    ("ES", "Madrid"),
+    ("FR", "París"),
+    ("IT", "Roma"),
+    ("DE", "Berlín"),
+    ("PT", "Lisboa"),
+    ("NL", "Ámsterdam"),
+    ("BE", "Bruselas"),
+    ("SE", "Estocolmo"),
+    ("AT", "Viena"),
+    ("CH", "Ginebra"),
+    ]
+
+
+    AeropuertoS = [
+    ("ES", "Aeropuerto Adolfo Suárez Madrid-Barajas"),  # Madrid, España
+    ("FR", "Aeropuerto Charles de Gaulle"),             # París, Francia
+    ("IT", "Aeropuerto Internacional Leonardo da Vinci"),  # Roma, Italia
+    ("DE", "Aeropuerto de Berlín-Tegel"),               # Berlín, Alemania
+    ("PT", "Aeropuerto de Lisboa"),                     # Lisboa, Portugal
+    ("NL", "Aeropuerto de Ámsterdam-Schiphol"),        # Ámsterdam, Países Bajos
+    ("BE", "Aeropuerto de Bruselas-Zaventem"),         # Bruselas, Bélgica
+    ("SE", "Aeropuerto de Estocolmo-Arlanda"),         # Estocolmo, Suecia
+    ("AT", "Aeropuerto Internacional de Viena"),       # Viena, Austria
+    ("CH", "Aeropuerto de Ginebra"),                   # Ginebra, Suiza
+]
+
+
+
+    nombre = models.CharField(
+        max_length=100,
+        choices=AeropuertoS,
+        verbose_name="Aeropuerto"
+    )
+    ciudades = models.CharField(
+        max_length=100,
+        choices=CIUDADES,
+    ) 
+    pais = models.CharField(
+        max_length=100,
+        choices=PAISES,
+    ) 
+    capacidad_maxima = models.IntegerField(default=150) # Campo por defecto
 
     def __str__(self):
         return self.nombre
+    
 
 
 # Modelo Vuelo
 class Vuelo(models.Model):
-    numero_vuelo = models.CharField(max_length=10)
+    numero_vuelo_dia = models.IntegerField(db_column='veces_volado_dia',blank=False,
+    error_messages={'blank': 'Este campo no puede estar vacío.',})
     hora_salida = models.DateTimeField()
     hora_llegada = models.DateTimeField()
-    aeropuerto = models.ForeignKey(Aeropuerto, on_delete=models.CASCADE)  # Relación ManyToOne
-    estado = models.CharField(max_length=20)  
+    volando  = models.BooleanField() #boolean
+    duracion = models.DurationField(editable=False)  # Duración del vuelo
+    aeropuerto = models.ForeignKey(Aeropuerto , on_delete=models.CASCADE)  # Relación ManyToOne
 
+
+    def save(self, *args, **kwargs):
+        # Calcular la duración como la diferencia entre hora_llegada y hora_salida
+        if self.hora_llegada and self.hora_salida:
+            self.duracion = self.hora_llegada - self.hora_salida
+        super().save(*args, **kwargs)
+    
     def __str__(self):
         return self.numero_vuelo
 
 
 # Modelo Pasajero
+
+def validar_dominio_email(email):
+    # Lista de dominios permitidos
+        dominios_permitidos = ['@gmail.com', '@hotmail.com', '@polignosur.org']
+    
+    # Comprobar si el correo electrónico termina con alguno de los dominios permitidos
+        if not any(email.endswith(dominio) for dominio in dominios_permitidos):
+            raise ValidationError(
+                _('El correo electrónico debe tener uno de los siguientes dominios: @gmail.com, @hotmail.com, @polignosur.org.'),
+                code='invalid_domain',
+            )
+        
 class Pasajero(models.Model):
-    nombre = models.CharField(max_length=100)
-    apellido = models.CharField(max_length=100)
-    email = models.EmailField()
-    telefono = models.CharField(max_length=15)
-    fecha_nacimiento = models.DateField()  
+    nombre = models.CharField(max_length=20)
+    apellido = models.CharField(max_length=20, blank=True)  # Permitir valores vacíos
+    email = models.EmailField(validators=[validar_dominio_email])
+    telefono = models.CharField(
+        max_length=9,
+        validators=[
+            MaxLengthValidator(9),
+            RegexValidator(regex=r'^\d{9}$', message='El número de teléfono debe tener exactamente 9 dígitos.')
+        ],
+        blank=True  # Permitir que este campo esté vacío si es necesario
+    )
+    fecha_nacimiento = models.DateField(null=True)  
+    vuelo = models.ForeignKey(Vuelo, on_delete=models.CASCADE)  # Relación ManyToOne
+    aeropuerto = models.ForeignKey(Aeropuerto, on_delete=models.CASCADE) # Relación ManyToOne
+
 
     def __str__(self):
         return f"{self.nombre} {self.apellido}"
+        
 
-
-# Modelo Equipaje (OneToOne con Pasajero)
+    
+# Modelo Equipaje
 class Equipaje(models.Model):
-    pasajero = models.OneToOneField(Pasajero, on_delete=models.CASCADE)  # Relación OneToOne
     peso = models.FloatField()
     dimensiones = models.CharField(max_length=50)
-    tipo_material = models.CharField(max_length=30)  
+    tipo_material = models.CharField(max_length=30)
+    color = models.CharField(max_length=50)
+    pasajero = models.OneToOneField(Pasajero, on_delete=models.CASCADE)  # Relación OneToOne
+    vuelo = models.ForeignKey(Vuelo, on_delete=models.CASCADE) # Relación ManyToOne
 
     def __str__(self):
         return f"Equipaje de {self.pasajero.nombre} {self.pasajero.apellido}"
@@ -48,22 +138,49 @@ class Equipaje(models.Model):
 
 # Modelo Aerolínea
 class Aerolinea(models.Model):
-    nombre = models.CharField(max_length=100)
+
+    paises = [
+        ("ES", "España"),
+        ("EN", "Inglaterra"),
+        ("FR", "Francia"),
+        ("IT", "Italia"),
+    ]
+
+    nombre = models.CharField(max_length=100,verbose_name="Aerolínea operadora")
     codigo = models.CharField(max_length=10)
-    pais = models.CharField(max_length=100)
-    fecha_fundacion = models.DateField()  
+    fecha_fundacion = models.DateField()
+    pais = models.CharField(
+        max_length=2,
+        choices=paises,
+    ) 
 
     def __str__(self):
         return self.nombre
+    vuelo =   models.ManyToManyField(Vuelo) # Relación ManytoMany
+    aeropuerto =   models.ManyToManyField(Aeropuerto) # Relación ManytoMany
 
 
 # Tabla intermedia Vuelo_Aerolinea
 class VueloAerolinea(models.Model):
-    vuelo = models.ForeignKey(Vuelo, on_delete=models.CASCADE)  # Relación ManyToMany con atributos extras
-    aerolinea = models.ForeignKey(Aerolinea, on_delete=models.CASCADE)
+    tipos_clase_avion = [
+    ("E", "Economy"),
+    ("B", "Business"),
+    ("F", "First Class"),
+    ("P", "Premium Economy"),
+    ("L", "Luxury"),
+    ("S", "Standard"),
+    ("H", "Hybrid"),
+    ("X", "Extra Legroom"),
+    ("R", "Regional"),
+    ("C", "Charter")
+    ]
+
     fecha_operacion = models.DateTimeField()
-    estado = models.CharField(max_length=50)
-    precio = models.FloatField()  
+    estado = models.TextField()
+    clase = models.CharField(max_length=1,choices=tipos_clase_avion)
+    numero_de_vuelos = models.IntegerField(default=5)
+    vuelo = models.ManyToManyField(Vuelo)  # Relación ManyToMany
+    aerolinea = models.ManyToManyField(Aerolinea) # Relación ManyToMany
 
     def __str__(self):
         return f"Vuelo {self.vuelo.numero_vuelo} operado por {self.aerolinea.nombre}"
@@ -71,11 +188,20 @@ class VueloAerolinea(models.Model):
 
 # Modelo Reserva
 class Reserva(models.Model):
-    pasajero = models.ForeignKey(Pasajero, on_delete=models.CASCADE)  # Relación ManyToOne
-    vuelo = models.ForeignKey(Vuelo, on_delete=models.CASCADE)  # Relación ManyToOne
-    fecha_reserva = models.DateTimeField()
+
+    METODO_PAGO_CHOICES = [
+        ('tarjeta', 'Tarjeta de crédito'),
+        ('efectivo', 'Efectivo'),
+        ('paypal', 'PayPal'),
+    ]
+    fecha_reserva = models.DateTimeField(default=timezone.now, blank=True)  # Valor por defecto: fecha y hora actuales
     estado = models.CharField(max_length=50)
-    metodo_pago = models.CharField(max_length=50)  
+    metodo_pago = models.CharField(max_length=10, 
+                                   choices=METODO_PAGO_CHOICES,
+                                   default= 'tarjeta')
+    estado_de_pago = models.BooleanField(default=False)
+    pasajero = models.OneToOneField(Pasajero, on_delete=models.CASCADE)  # Relación OneToOne
+    vuelo = models.ForeignKey(Vuelo, on_delete=models.CASCADE)  # Relación ManyToOne
 
     def __str__(self):
         return f"Reserva de {self.pasajero.nombre} {self.pasajero.apellido} para vuelo {self.vuelo.numero_vuelo}"
@@ -83,10 +209,15 @@ class Reserva(models.Model):
 
 # Modelo Empleado
 class Empleado(models.Model):
+    CARGO = [
+        ('JE', 'Jefe'),
+        ('EM', 'Empleado'),
+    ]
+
     nombre = models.CharField(max_length=100)
     apellido = models.CharField(max_length=100)
-    cargo = models.CharField(max_length=100)
-    aeropuerto = models.OneToOneField(Aeropuerto, on_delete=models.CASCADE)  # Relación OneToOne
+    cargo = models.CharField(max_length=2,choices=CARGO,)
+    aeropuerto = models.ForeignKey(Aeropuerto, on_delete=models.CASCADE)  # Relación ManyToOne
     fecha_contratacion = models.DateField()  
 
     def __str__(self):
@@ -95,10 +226,25 @@ class Empleado(models.Model):
 
 # Modelo Silla (para Vuelo)
 class Silla(models.Model):
+    tipos_clase_avion = [
+    ("E", "Economy"),
+    ("B", "Business"),
+    ("F", "First Class"),
+    ("P", "Premium Economy"),
+    ("L", "Luxury"),
+    ("S", "Standard"),
+    ("H", "Hybrid"),
+    ("X", "Extra Legroom"),
+    ("R", "Regional"),
+    ("C", "Charter")
+    ]
+
     numero = models.IntegerField()
-    clase = models.CharField(max_length=20)
+    clase = models.CharField(max_length=1,choices=tipos_clase_avion)
     vuelo = models.ForeignKey(Vuelo, on_delete=models.CASCADE)  # Relación ManyToOne
-    precio = models.FloatField()  
+    pasajero = models.OneToOneField(Pasajero,on_delete=models.CASCADE)  # Relación OneToOne
+    precio = models.FloatField()
+    posicion = models.IntegerField()  
 
     def __str__(self):
         return f"Silla {self.numero} ({self.clase}) en vuelo {self.vuelo.numero_vuelo}"
@@ -108,8 +254,8 @@ class Silla(models.Model):
 class Servicio(models.Model):
     tipo_servicio = models.CharField(max_length=100)
     costo = models.FloatField()
-    aeropuerto = models.ForeignKey(Aeropuerto, on_delete=models.CASCADE)  # Relación ManyToOne
-    duracion = models.IntegerField()  
+    aeropuerto = models.OneToOneField(Aeropuerto, on_delete=models.CASCADE)  # Relación OneToOne
+    duracion = models.IntegerField()
 
     def __str__(self):
         return self.tipo_servicio

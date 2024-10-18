@@ -101,20 +101,16 @@
 
     <div class="container">
         <h1>Listado de Vuelos por Aerolínea</h1>
-        {% for vuelo_aerolinea in lista_vuelo_aerolinea %}
+        {% for vuelo_aerolinea in vuelos_aerolineas %}
         <article>
             <h2>Vuelo Aerolínea</h2>
             <p><strong>ID:</strong> {{ vuelo_aerolinea.id }}</p>
-            <p><strong>Vuelo:</strong> {{ vuelo_aerolinea.vuelo.numero_vuelo }}</p>
             <p><strong>Aerolínea:</strong> {{ vuelo_aerolinea.aerolinea.nombre }}</p>
             <p><strong>Fecha Operación:</strong> {{ vuelo_aerolinea.fecha_operacion }}</p>
             <p><strong>Estado:</strong> {{ vuelo_aerolinea.estado }}</p>
-            <p><strong>Precio:</strong> {{ vuelo_aerolinea.precio }}</p>
+            <p><strong>Clase:</strong> {{ vuelo_aerolinea.clase }}</p>
         </article>
         {% endfor %}
-        <div class="refresh">
-            <a href="{% url 'lista_vuelo_aerolinea' %}">Refrescar la Lista</a>
-        </div>
     </div>
 
     <footer>
