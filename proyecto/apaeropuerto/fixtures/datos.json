@@ -1,0 +1,1430 @@
+[
+{
+    "model": "auth.permission",
+    "pk": 1,
+    "fields": {
+        "name": "Can add log entry",
+        "content_type": 1,
+        "codename": "add_logentry"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 2,
+    "fields": {
+        "name": "Can change log entry",
+        "content_type": 1,
+        "codename": "change_logentry"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 3,
+    "fields": {
+        "name": "Can delete log entry",
+        "content_type": 1,
+        "codename": "delete_logentry"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 4,
+    "fields": {
+        "name": "Can view log entry",
+        "content_type": 1,
+        "codename": "view_logentry"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 5,
+    "fields": {
+        "name": "Can add permission",
+        "content_type": 2,
+        "codename": "add_permission"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 6,
+    "fields": {
+        "name": "Can change permission",
+        "content_type": 2,
+        "codename": "change_permission"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 7,
+    "fields": {
+        "name": "Can delete permission",
+        "content_type": 2,
+        "codename": "delete_permission"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 8,
+    "fields": {
+        "name": "Can view permission",
+        "content_type": 2,
+        "codename": "view_permission"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 9,
+    "fields": {
+        "name": "Can add group",
+        "content_type": 3,
+        "codename": "add_group"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 10,
+    "fields": {
+        "name": "Can change group",
+        "content_type": 3,
+        "codename": "change_group"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 11,
+    "fields": {
+        "name": "Can delete group",
+        "content_type": 3,
+        "codename": "delete_group"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 12,
+    "fields": {
+        "name": "Can view group",
+        "content_type": 3,
+        "codename": "view_group"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 13,
+    "fields": {
+        "name": "Can add user",
+        "content_type": 4,
+        "codename": "add_user"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 14,
+    "fields": {
+        "name": "Can change user",
+        "content_type": 4,
+        "codename": "change_user"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 15,
+    "fields": {
+        "name": "Can delete user",
+        "content_type": 4,
+        "codename": "delete_user"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 16,
+    "fields": {
+        "name": "Can view user",
+        "content_type": 4,
+        "codename": "view_user"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 17,
+    "fields": {
+        "name": "Can add content type",
+        "content_type": 5,
+        "codename": "add_contenttype"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 18,
+    "fields": {
+        "name": "Can change content type",
+        "content_type": 5,
+        "codename": "change_contenttype"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 19,
+    "fields": {
+        "name": "Can delete content type",
+        "content_type": 5,
+        "codename": "delete_contenttype"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 20,
+    "fields": {
+        "name": "Can view content type",
+        "content_type": 5,
+        "codename": "view_contenttype"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 21,
+    "fields": {
+        "name": "Can add session",
+        "content_type": 6,
+        "codename": "add_session"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 22,
+    "fields": {
+        "name": "Can change session",
+        "content_type": 6,
+        "codename": "change_session"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 23,
+    "fields": {
+        "name": "Can delete session",
+        "content_type": 6,
+        "codename": "delete_session"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 24,
+    "fields": {
+        "name": "Can view session",
+        "content_type": 6,
+        "codename": "view_session"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 25,
+    "fields": {
+        "name": "Can add vuelo",
+        "content_type": 7,
+        "codename": "add_vuelo"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 26,
+    "fields": {
+        "name": "Can change vuelo",
+        "content_type": 7,
+        "codename": "change_vuelo"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 27,
+    "fields": {
+        "name": "Can delete vuelo",
+        "content_type": 7,
+        "codename": "delete_vuelo"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 28,
+    "fields": {
+        "name": "Can view vuelo",
+        "content_type": 7,
+        "codename": "view_vuelo"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 29,
+    "fields": {
+        "name": "Can add ruta",
+        "content_type": 8,
+        "codename": "add_ruta"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 30,
+    "fields": {
+        "name": "Can change ruta",
+        "content_type": 8,
+        "codename": "change_ruta"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 31,
+    "fields": {
+        "name": "Can delete ruta",
+        "content_type": 8,
+        "codename": "delete_ruta"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 32,
+    "fields": {
+        "name": "Can view ruta",
+        "content_type": 8,
+        "codename": "view_ruta"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 33,
+    "fields": {
+        "name": "Can add vuelo aerolinea",
+        "content_type": 9,
+        "codename": "add_vueloaerolinea"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 34,
+    "fields": {
+        "name": "Can change vuelo aerolinea",
+        "content_type": 9,
+        "codename": "change_vueloaerolinea"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 35,
+    "fields": {
+        "name": "Can delete vuelo aerolinea",
+        "content_type": 9,
+        "codename": "delete_vueloaerolinea"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 36,
+    "fields": {
+        "name": "Can view vuelo aerolinea",
+        "content_type": 9,
+        "codename": "view_vueloaerolinea"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 37,
+    "fields": {
+        "name": "Can add silla",
+        "content_type": 10,
+        "codename": "add_silla"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 38,
+    "fields": {
+        "name": "Can change silla",
+        "content_type": 10,
+        "codename": "change_silla"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 39,
+    "fields": {
+        "name": "Can delete silla",
+        "content_type": 10,
+        "codename": "delete_silla"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 40,
+    "fields": {
+        "name": "Can view silla",
+        "content_type": 10,
+        "codename": "view_silla"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 41,
+    "fields": {
+        "name": "Can add reserva",
+        "content_type": 11,
+        "codename": "add_reserva"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 42,
+    "fields": {
+        "name": "Can change reserva",
+        "content_type": 11,
+        "codename": "change_reserva"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 43,
+    "fields": {
+        "name": "Can delete reserva",
+        "content_type": 11,
+        "codename": "delete_reserva"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 44,
+    "fields": {
+        "name": "Can view reserva",
+        "content_type": 11,
+        "codename": "view_reserva"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 45,
+    "fields": {
+        "name": "Can add equipaje",
+        "content_type": 12,
+        "codename": "add_equipaje"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 46,
+    "fields": {
+        "name": "Can change equipaje",
+        "content_type": 12,
+        "codename": "change_equipaje"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 47,
+    "fields": {
+        "name": "Can delete equipaje",
+        "content_type": 12,
+        "codename": "delete_equipaje"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 48,
+    "fields": {
+        "name": "Can view equipaje",
+        "content_type": 12,
+        "codename": "view_equipaje"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 49,
+    "fields": {
+        "name": "Can add servicio",
+        "content_type": 13,
+        "codename": "add_servicio"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 50,
+    "fields": {
+        "name": "Can change servicio",
+        "content_type": 13,
+        "codename": "change_servicio"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 51,
+    "fields": {
+        "name": "Can delete servicio",
+        "content_type": 13,
+        "codename": "delete_servicio"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 52,
+    "fields": {
+        "name": "Can view servicio",
+        "content_type": 13,
+        "codename": "view_servicio"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 53,
+    "fields": {
+        "name": "Can add aeropuerto",
+        "content_type": 14,
+        "codename": "add_aeropuerto"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 54,
+    "fields": {
+        "name": "Can change aeropuerto",
+        "content_type": 14,
+        "codename": "change_aeropuerto"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 55,
+    "fields": {
+        "name": "Can delete aeropuerto",
+        "content_type": 14,
+        "codename": "delete_aeropuerto"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 56,
+    "fields": {
+        "name": "Can view aeropuerto",
+        "content_type": 14,
+        "codename": "view_aeropuerto"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 57,
+    "fields": {
+        "name": "Can add aerolinea",
+        "content_type": 15,
+        "codename": "add_aerolinea"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 58,
+    "fields": {
+        "name": "Can change aerolinea",
+        "content_type": 15,
+        "codename": "change_aerolinea"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 59,
+    "fields": {
+        "name": "Can delete aerolinea",
+        "content_type": 15,
+        "codename": "delete_aerolinea"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 60,
+    "fields": {
+        "name": "Can view aerolinea",
+        "content_type": 15,
+        "codename": "view_aerolinea"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 61,
+    "fields": {
+        "name": "Can add pasajero",
+        "content_type": 16,
+        "codename": "add_pasajero"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 62,
+    "fields": {
+        "name": "Can change pasajero",
+        "content_type": 16,
+        "codename": "change_pasajero"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 63,
+    "fields": {
+        "name": "Can delete pasajero",
+        "content_type": 16,
+        "codename": "delete_pasajero"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 64,
+    "fields": {
+        "name": "Can view pasajero",
+        "content_type": 16,
+        "codename": "view_pasajero"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 65,
+    "fields": {
+        "name": "Can add empleado",
+        "content_type": 17,
+        "codename": "add_empleado"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 66,
+    "fields": {
+        "name": "Can change empleado",
+        "content_type": 17,
+        "codename": "change_empleado"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 67,
+    "fields": {
+        "name": "Can delete empleado",
+        "content_type": 17,
+        "codename": "delete_empleado"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 68,
+    "fields": {
+        "name": "Can view empleado",
+        "content_type": 17,
+        "codename": "view_empleado"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 1,
+    "fields": {
+        "app_label": "admin",
+        "model": "logentry"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 2,
+    "fields": {
+        "app_label": "auth",
+        "model": "permission"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 3,
+    "fields": {
+        "app_label": "auth",
+        "model": "group"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 4,
+    "fields": {
+        "app_label": "auth",
+        "model": "user"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 5,
+    "fields": {
+        "app_label": "contenttypes",
+        "model": "contenttype"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 6,
+    "fields": {
+        "app_label": "sessions",
+        "model": "session"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 7,
+    "fields": {
+        "app_label": "apaeropuerto",
+        "model": "vuelo"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 8,
+    "fields": {
+        "app_label": "apaeropuerto",
+        "model": "ruta"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 9,
+    "fields": {
+        "app_label": "apaeropuerto",
+        "model": "vueloaerolinea"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 10,
+    "fields": {
+        "app_label": "apaeropuerto",
+        "model": "silla"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 11,
+    "fields": {
+        "app_label": "apaeropuerto",
+        "model": "reserva"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 12,
+    "fields": {
+        "app_label": "apaeropuerto",
+        "model": "equipaje"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 13,
+    "fields": {
+        "app_label": "apaeropuerto",
+        "model": "servicio"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 14,
+    "fields": {
+        "app_label": "apaeropuerto",
+        "model": "aeropuerto"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 15,
+    "fields": {
+        "app_label": "apaeropuerto",
+        "model": "aerolinea"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 16,
+    "fields": {
+        "app_label": "apaeropuerto",
+        "model": "pasajero"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 17,
+    "fields": {
+        "app_label": "apaeropuerto",
+        "model": "empleado"
+    }
+},
+{
+    "model": "apaeropuerto.aeropuerto",
+    "pk": 1,
+    "fields": {
+        "nombre": "IT",
+        "ciudades": "IT",
+        "pais": "NL",
+        "capacidad_maxima": 150
+    }
+},
+{
+    "model": "apaeropuerto.aeropuerto",
+    "pk": 2,
+    "fields": {
+        "nombre": "IT",
+        "ciudades": "CH",
+        "pais": "PT",
+        "capacidad_maxima": 150
+    }
+},
+{
+    "model": "apaeropuerto.aeropuerto",
+    "pk": 3,
+    "fields": {
+        "nombre": "SE",
+        "ciudades": "CH",
+        "pais": "ES",
+        "capacidad_maxima": 150
+    }
+},
+{
+    "model": "apaeropuerto.aeropuerto",
+    "pk": 4,
+    "fields": {
+        "nombre": "NL",
+        "ciudades": "IT",
+        "pais": "CH",
+        "capacidad_maxima": 150
+    }
+},
+{
+    "model": "apaeropuerto.aeropuerto",
+    "pk": 5,
+    "fields": {
+        "nombre": "ES",
+        "ciudades": "BE",
+        "pais": "NL",
+        "capacidad_maxima": 150
+    }
+},
+{
+    "model": "apaeropuerto.vuelo",
+    "pk": 1,
+    "fields": {
+        "numero_vuelo_dia": -17882,
+        "hora_salida": "2013-03-30T12:55:56.274",
+        "hora_llegada": "1998-02-21T02:47:52.765",
+        "volando": false,
+        "duracion": "-5517 13:51:56.491025",
+        "aeropuerto": 2
+    }
+},
+{
+    "model": "apaeropuerto.vuelo",
+    "pk": 2,
+    "fields": {
+        "numero_vuelo_dia": 32587,
+        "hora_salida": "2013-10-02T17:20:32.639",
+        "hora_llegada": "1988-09-13T06:10:51.713",
+        "volando": false,
+        "duracion": "-9151 12:50:19.073689",
+        "aeropuerto": 2
+    }
+},
+{
+    "model": "apaeropuerto.vuelo",
+    "pk": 3,
+    "fields": {
+        "numero_vuelo_dia": -21748,
+        "hora_salida": "1977-02-22T13:10:27.819",
+        "hora_llegada": "2017-12-16T10:39:51.587",
+        "volando": true,
+        "duracion": "14906 21:29:23.768777",
+        "aeropuerto": 5
+    }
+},
+{
+    "model": "apaeropuerto.vuelo",
+    "pk": 4,
+    "fields": {
+        "numero_vuelo_dia": -1741,
+        "hora_salida": "2000-09-05T23:49:48.825",
+        "hora_llegada": "1980-02-22T07:49:51.788",
+        "volando": true,
+        "duracion": "-7502 08:00:02.963595",
+        "aeropuerto": 4
+    }
+},
+{
+    "model": "apaeropuerto.vuelo",
+    "pk": 5,
+    "fields": {
+        "numero_vuelo_dia": 22145,
+        "hora_salida": "2016-09-23T06:49:46.817",
+        "hora_llegada": "1972-10-10T07:24:04.124",
+        "volando": true,
+        "duracion": "-16054 00:34:17.306109",
+        "aeropuerto": 1
+    }
+},
+{
+    "model": "apaeropuerto.pasajero",
+    "pk": 1,
+    "fields": {
+        "nombre": "Artist environment.",
+        "apellido": "Along simply.",
+        "email": "berrymegan@example.net",
+        "telefono": "Since.",
+        "fecha_nacimiento": "1973-01-31",
+        "vuelo": 2,
+        "aeropuerto": 5
+    }
+},
+{
+    "model": "apaeropuerto.pasajero",
+    "pk": 2,
+    "fields": {
+        "nombre": "Send administration.",
+        "apellido": "Per edge effect.",
+        "email": "michaelchase@example.com",
+        "telefono": "The six.",
+        "fecha_nacimiento": "2012-04-28",
+        "vuelo": 2,
+        "aeropuerto": 4
+    }
+},
+{
+    "model": "apaeropuerto.pasajero",
+    "pk": 3,
+    "fields": {
+        "nombre": "Clear almost.",
+        "apellido": "Popular least some.",
+        "email": "cisnerosashley@example.com",
+        "telefono": "Relate.",
+        "fecha_nacimiento": "2018-12-17",
+        "vuelo": 1,
+        "aeropuerto": 2
+    }
+},
+{
+    "model": "apaeropuerto.pasajero",
+    "pk": 4,
+    "fields": {
+        "nombre": "Break series unit.",
+        "apellido": "Adult bring.",
+        "email": "andersonthomas@example.net",
+        "telefono": "Stock.",
+        "fecha_nacimiento": "2014-03-22",
+        "vuelo": 4,
+        "aeropuerto": 5
+    }
+},
+{
+    "model": "apaeropuerto.pasajero",
+    "pk": 5,
+    "fields": {
+        "nombre": "Often work sell.",
+        "apellido": "Entire against.",
+        "email": "christinahammond@example.org",
+        "telefono": "Within.",
+        "fecha_nacimiento": "2016-09-03",
+        "vuelo": 4,
+        "aeropuerto": 4
+    }
+},
+{
+    "model": "apaeropuerto.equipaje",
+    "pk": 1,
+    "fields": {
+        "peso": 0.36460524467202815,
+        "dimensiones": "Mrs however leader service situation term yard.",
+        "tipo_material": "Show still road specific.",
+        "color": "Activity detail one reveal.",
+        "pasajero": 1,
+        "vuelo": 3
+    }
+},
+{
+    "model": "apaeropuerto.equipaje",
+    "pk": 2,
+    "fields": {
+        "peso": 0.38966922233367285,
+        "dimensiones": "Probably it receive responsibility.",
+        "tipo_material": "Analysis yet want.",
+        "color": "Former their add thank.",
+        "pasajero": 2,
+        "vuelo": 4
+    }
+},
+{
+    "model": "apaeropuerto.equipaje",
+    "pk": 3,
+    "fields": {
+        "peso": 0.2014258169535682,
+        "dimensiones": "Imagine score name Congress meeting.",
+        "tipo_material": "Garden into home.",
+        "color": "I little job such design measure.",
+        "pasajero": 4,
+        "vuelo": 5
+    }
+},
+{
+    "model": "apaeropuerto.equipaje",
+    "pk": 4,
+    "fields": {
+        "peso": 0.9098961572550299,
+        "dimensiones": "Common per trade.",
+        "tipo_material": "Summer week front garden we.",
+        "color": "Method pass somebody form year mind improve.",
+        "pasajero": 3,
+        "vuelo": 2
+    }
+},
+{
+    "model": "apaeropuerto.equipaje",
+    "pk": 5,
+    "fields": {
+        "peso": 0.9436441449738787,
+        "dimensiones": "Agreement always do security.",
+        "tipo_material": "Drop no result want.",
+        "color": "Ready cold trial skin.",
+        "pasajero": 5,
+        "vuelo": 4
+    }
+},
+{
+    "model": "apaeropuerto.aerolinea",
+    "pk": 1,
+    "fields": {
+        "nombre": "House anyone us. Coach seek herself yet hotel. One sell forward song.",
+        "codigo": "Quickly.",
+        "fecha_fundacion": "1990-04-07",
+        "pais": "FR",
+        "vuelo": [
+            4,
+            5
+        ],
+        "aeropuerto": [
+            3
+        ]
+    }
+},
+{
+    "model": "apaeropuerto.aerolinea",
+    "pk": 2,
+    "fields": {
+        "nombre": "Industry safe job. Week main organization have option step.",
+        "codigo": "Really.",
+        "fecha_fundacion": "1994-08-18",
+        "pais": "ES",
+        "vuelo": [
+            5
+        ],
+        "aeropuerto": [
+            2,
+            3
+        ]
+    }
+},
+{
+    "model": "apaeropuerto.aerolinea",
+    "pk": 3,
+    "fields": {
+        "nombre": "Want system Democrat law. Three player look they hit almost. Four man picture author four.",
+        "codigo": "Figure.",
+        "fecha_fundacion": "1988-09-08",
+        "pais": "FR",
+        "vuelo": [
+            1,
+            4
+        ],
+        "aeropuerto": [
+            1
+        ]
+    }
+},
+{
+    "model": "apaeropuerto.aerolinea",
+    "pk": 4,
+    "fields": {
+        "nombre": "Left direction likely. Season teacher decide today culture wait town.\nPicture high my world game.",
+        "codigo": "Stuff.",
+        "fecha_fundacion": "1977-11-10",
+        "pais": "IT",
+        "vuelo": [
+            2
+        ],
+        "aeropuerto": [
+            1,
+            5
+        ]
+    }
+},
+{
+    "model": "apaeropuerto.aerolinea",
+    "pk": 5,
+    "fields": {
+        "nombre": "According food approach popular attention tough anyone. Decide yourself finally store.",
+        "codigo": "Message.",
+        "fecha_fundacion": "2017-12-01",
+        "pais": "EN",
+        "vuelo": [
+            2
+        ],
+        "aeropuerto": [
+            4,
+            5
+        ]
+    }
+},
+{
+    "model": "apaeropuerto.vueloaerolinea",
+    "pk": 1,
+    "fields": {
+        "fecha_operacion": "1975-04-25T00:41:49.089",
+        "estado": "Remember body when end wait. Might everyone four politics say low many. City crime at sell price.\nJoin door act. Impact arrive decade bar campaign social. Indeed us main help.",
+        "clase": "B",
+        "numero_de_vuelos": 5,
+        "vuelo": [
+            1,
+            5
+        ],
+        "aerolinea": [
+            2,
+            5
+        ]
+    }
+},
+{
+    "model": "apaeropuerto.vueloaerolinea",
+    "pk": 2,
+    "fields": {
+        "fecha_operacion": "1999-04-06T08:12:46.975",
+        "estado": "Company too hand prove interview significant argue. News meeting special similar.\nWay five red air his probably. Bar energy perhaps.\nMiss property could bill investment claim team.",
+        "clase": "X",
+        "numero_de_vuelos": 5,
+        "vuelo": [
+            5
+        ],
+        "aerolinea": [
+            3
+        ]
+    }
+},
+{
+    "model": "apaeropuerto.vueloaerolinea",
+    "pk": 3,
+    "fields": {
+        "fecha_operacion": "1975-12-29T11:20:58.605",
+        "estado": "With third past account particular. Report prevent media available run.\nArt nearly sing reality.\nNecessary process current later. Cause benefit meeting try movie arrive ok.",
+        "clase": "C",
+        "numero_de_vuelos": 5,
+        "vuelo": [
+            4
+        ],
+        "aerolinea": [
+            1
+        ]
+    }
+},
+{
+    "model": "apaeropuerto.vueloaerolinea",
+    "pk": 4,
+    "fields": {
+        "fecha_operacion": "1983-08-08T14:02:44.928",
+        "estado": "Lawyer affect activity term investment fire my. Body describe particularly me real. Plant responsibility action cut talk.",
+        "clase": "P",
+        "numero_de_vuelos": 5,
+        "vuelo": [
+            5
+        ],
+        "aerolinea": [
+            1,
+            4
+        ]
+    }
+},
+{
+    "model": "apaeropuerto.vueloaerolinea",
+    "pk": 5,
+    "fields": {
+        "fecha_operacion": "2012-04-06T16:30:54.035",
+        "estado": "Trip early suddenly away many hospital. Reduce project none push city rock. Space ability difficult summer.\nDefense nor south treat. Person fly set grow make white because.",
+        "clase": "S",
+        "numero_de_vuelos": 5,
+        "vuelo": [
+            1,
+            2
+        ],
+        "aerolinea": [
+            2,
+            3
+        ]
+    }
+},
+{
+    "model": "apaeropuerto.reserva",
+    "pk": 1,
+    "fields": {
+        "fecha_reserva": "2024-10-18T21:49:35.744",
+        "estado": "Finish pretty it remember whatever.",
+        "metodo_pago": "tarjeta",
+        "estado_de_pago": false,
+        "pasajero": 3,
+        "vuelo": 4
+    }
+},
+{
+    "model": "apaeropuerto.reserva",
+    "pk": 2,
+    "fields": {
+        "fecha_reserva": "2024-10-18T21:49:35.744",
+        "estado": "Role task trial white state full.",
+        "metodo_pago": "tarjeta",
+        "estado_de_pago": false,
+        "pasajero": 2,
+        "vuelo": 4
+    }
+},
+{
+    "model": "apaeropuerto.reserva",
+    "pk": 3,
+    "fields": {
+        "fecha_reserva": "2024-10-18T21:49:35.744",
+        "estado": "Find finally professor ready as adult.",
+        "metodo_pago": "tarjeta",
+        "estado_de_pago": true,
+        "pasajero": 1,
+        "vuelo": 1
+    }
+},
+{
+    "model": "apaeropuerto.reserva",
+    "pk": 4,
+    "fields": {
+        "fecha_reserva": "2024-10-18T21:49:35.744",
+        "estado": "Wall share various gas relate cold pretty.",
+        "metodo_pago": "tarjeta",
+        "estado_de_pago": true,
+        "pasajero": 4,
+        "vuelo": 2
+    }
+},
+{
+    "model": "apaeropuerto.reserva",
+    "pk": 5,
+    "fields": {
+        "fecha_reserva": "2024-10-18T21:49:35.744",
+        "estado": "Wear knowledge miss senior safe that top.",
+        "metodo_pago": "tarjeta",
+        "estado_de_pago": true,
+        "pasajero": 5,
+        "vuelo": 3
+    }
+},
+{
+    "model": "apaeropuerto.empleado",
+    "pk": 1,
+    "fields": {
+        "nombre": "Current gun quite check. Price simple eye machine either.",
+        "apellido": "Above day within eight already or west add. Four more including who project sell try.",
+        "cargo": "JE",
+        "aeropuerto": 3,
+        "fecha_contratacion": "2000-09-25"
+    }
+},
+{
+    "model": "apaeropuerto.empleado",
+    "pk": 2,
+    "fields": {
+        "nombre": "Mouth wind cold trade. Need price place sign certainly politics western.",
+        "apellido": "Situation foot she line participant movie.",
+        "cargo": "EM",
+        "aeropuerto": 1,
+        "fecha_contratacion": "2014-03-03"
+    }
+},
+{
+    "model": "apaeropuerto.empleado",
+    "pk": 3,
+    "fields": {
+        "nombre": "Off size gun Republican soldier prepare kitchen. Current reduce memory month other executive.",
+        "apellido": "Country fall current miss price. Behavior still market movie significant. Fire media anything card.",
+        "cargo": "EM",
+        "aeropuerto": 5,
+        "fecha_contratacion": "1975-05-12"
+    }
+},
+{
+    "model": "apaeropuerto.empleado",
+    "pk": 4,
+    "fields": {
+        "nombre": "Smile speak control voice character top modern. However eat start.",
+        "apellido": "Third part message both. West team policy quickly. Story floor community.",
+        "cargo": "JE",
+        "aeropuerto": 4,
+        "fecha_contratacion": "1994-11-21"
+    }
+},
+{
+    "model": "apaeropuerto.empleado",
+    "pk": 5,
+    "fields": {
+        "nombre": "Cut must wall court issue item will federal. Trial officer beat.",
+        "apellido": "Participant budget result no. Recent age task current through marriage party.",
+        "cargo": "EM",
+        "aeropuerto": 4,
+        "fecha_contratacion": "2019-10-19"
+    }
+},
+{
+    "model": "apaeropuerto.silla",
+    "pk": 1,
+    "fields": {
+        "numero": 12059,
+        "clase": "P",
+        "vuelo": 2,
+        "pasajero": 3,
+        "precio": 0.1297358043379443,
+        "posicion": -7812
+    }
+},
+{
+    "model": "apaeropuerto.silla",
+    "pk": 2,
+    "fields": {
+        "numero": -13704,
+        "clase": "B",
+        "vuelo": 4,
+        "pasajero": 1,
+        "precio": 0.1797487684162753,
+        "posicion": 28184
+    }
+},
+{
+    "model": "apaeropuerto.silla",
+    "pk": 3,
+    "fields": {
+        "numero": 11845,
+        "clase": "F",
+        "vuelo": 3,
+        "pasajero": 5,
+        "precio": 0.27438295647111877,
+        "posicion": 31830
+    }
+},
+{
+    "model": "apaeropuerto.silla",
+    "pk": 4,
+    "fields": {
+        "numero": 7142,
+        "clase": "R",
+        "vuelo": 5,
+        "pasajero": 2,
+        "precio": 0.9305673964401812,
+        "posicion": 5764
+    }
+},
+{
+    "model": "apaeropuerto.silla",
+    "pk": 5,
+    "fields": {
+        "numero": -23778,
+        "clase": "S",
+        "vuelo": 2,
+        "pasajero": 4,
+        "precio": 0.09792270387218693,
+        "posicion": -5290
+    }
+},
+{
+    "model": "apaeropuerto.servicio",
+    "pk": 1,
+    "fields": {
+        "tipo_servicio": "Fund mean cup glass seem yes. Camera nature economic difficult general.",
+        "costo": 0.40314115965891495,
+        "aeropuerto": 2,
+        "duracion": -10032
+    }
+},
+{
+    "model": "apaeropuerto.servicio",
+    "pk": 2,
+    "fields": {
+        "tipo_servicio": "Policy often across cost fight buy. Mother seem hard young other point.",
+        "costo": 0.018268632539701013,
+        "aeropuerto": 5,
+        "duracion": 23129
+    }
+},
+{
+    "model": "apaeropuerto.servicio",
+    "pk": 3,
+    "fields": {
+        "tipo_servicio": "Game give piece today. Positive sign activity up develop cup.",
+        "costo": 0.12100682252116202,
+        "aeropuerto": 4,
+        "duracion": -20934
+    }
+},
+{
+    "model": "apaeropuerto.servicio",
+    "pk": 4,
+    "fields": {
+        "tipo_servicio": "Management point like painting war could. Sign election land same protect.",
+        "costo": 0.737761020563249,
+        "aeropuerto": 3,
+        "duracion": 8431
+    }
+},
+{
+    "model": "apaeropuerto.servicio",
+    "pk": 5,
+    "fields": {
+        "tipo_servicio": "Long necessary end collection from back. Significant during peace investment quality second stay.",
+        "costo": 0.9882192181361833,
+        "aeropuerto": 1,
+        "duracion": 8501
+    }
+},
+{
+    "model": "apaeropuerto.ruta",
+    "pk": 1,
+    "fields": {
+        "origen": 2,
+        "destino": 3,
+        "duracion": -22281,
+        "distancia": 0.3424093828942748
+    }
+},
+{
+    "model": "apaeropuerto.ruta",
+    "pk": 2,
+    "fields": {
+        "origen": 1,
+        "destino": 5,
+        "duracion": -6543,
+        "distancia": 0.2501101645955206
+    }
+},
+{
+    "model": "apaeropuerto.ruta",
+    "pk": 3,
+    "fields": {
+        "origen": 1,
+        "destino": 2,
+        "duracion": -30093,
+        "distancia": 0.35161931961401194
+    }
+},
+{
+    "model": "apaeropuerto.ruta",
+    "pk": 4,
+    "fields": {
+        "origen": 1,
+        "destino": 4,
+        "duracion": 11099,
+        "distancia": 0.026781348388852044
+    }
+},
+{
+    "model": "apaeropuerto.ruta",
+    "pk": 5,
+    "fields": {
+        "origen": 1,
+        "destino": 3,
+        "duracion": -12736,
+        "distancia": 0.13623574080871814
+    }
+}
+]
