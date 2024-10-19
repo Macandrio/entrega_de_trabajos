@@ -84,7 +84,7 @@ class Vuelo(models.Model):
         super().save(*args, **kwargs)
     
     def __str__(self):
-        return self.numero_vuelo_dia
+        return f"{self.numero_vuelo_dia}"
 
 
 # Modelo Pasajero
@@ -113,7 +113,6 @@ class Pasajero(models.Model):
         blank=True  # Permitir que este campo esté vacío si es necesario
     )
     fecha_nacimiento = models.DateField(null=True)  
-    vuelo = models.ForeignKey(Vuelo, on_delete=models.CASCADE)  # Relación ManyToOne
     aeropuerto = models.ForeignKey(Aeropuerto, on_delete=models.CASCADE) # Relación ManyToOne
 
 
@@ -178,11 +177,9 @@ class VueloAerolinea(models.Model):
     estado = models.TextField()
     clase = models.CharField(max_length=1,choices=tipos_clase_avion, default='E')
     numero_de_vuelos = models.IntegerField(default=5)
-    vuelo = models.ManyToManyField(Vuelo)  # Relación ManyToMany
-    aerolinea = models.ManyToManyField(Aerolinea) # Relación ManyToMany
-
-    def __str__(self):
-        return f"Vuelo {self.vuelo.numero_vuelo} operado por {self.aerolinea.nombre}"
+    vuelo = models.ForeignKey(Vuelo, on_delete=models.CASCADE)  # Relación OneToMany
+    aerolinea = models.ForeignKey(Aerolinea, on_delete=models.CASCADE) # Relación OneToMany
+  
 
 
 # Modelo Reserva
@@ -203,7 +200,7 @@ class Reserva(models.Model):
     vuelo = models.ForeignKey(Vuelo, on_delete=models.CASCADE)  # Relación ManyToOne
 
     def __str__(self):
-        return f"Reserva de {self.pasajero.nombre} {self.pasajero.apellido} para vuelo {self.vuelo.numero_vuelo}"
+        return f"Reserva de {self.pasajero.nombre} {self.pasajero.apellido}"
 
 
 # Modelo Empleado
@@ -218,6 +215,8 @@ class Empleado(models.Model):
     cargo = models.CharField(max_length=2,choices=CARGO,default='EM')
     fecha_contratacion = models.DateField()
     aeropuerto = models.ForeignKey(Aeropuerto, on_delete=models.CASCADE)   # Relación ManyToOne
+    vuelos = models.ManyToManyField(Vuelo) #Relacion ManyToMany
+
 
     def __str__(self):
         return f"{self.nombre} {self.apellido}, {self.cargo} en {self.aeropuerto.nombre}"
@@ -257,6 +256,7 @@ class Servicio(models.Model):
     añadido = models.CharField(max_length=100)
     aeropuerto = models.OneToOneField(Aeropuerto, on_delete=models.CASCADE)  # Relación OneToOne
     vuelo = models.ForeignKey(Vuelo, on_delete=models.CASCADE)  # Relación OneToOne
+    pasajeros = models.ManyToManyField(Pasajero)  # Relación ManyToMany
 
     def __str__(self):
         return self.tipo_servicio
