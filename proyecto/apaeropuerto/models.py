@@ -245,7 +245,7 @@ class Silla(models.Model):
     pasajero = models.OneToOneField(Pasajero,on_delete=models.CASCADE)  # Relación OneToOne 
 
     def __str__(self):
-        return f"Silla {self.numero} ({self.clase}) en vuelo {self.vuelo.numero_vuelo}"
+        return f"Silla {self.numero} ({self.clase})"
 
 
 # Modelo Servicio
@@ -254,8 +254,9 @@ class Servicio(models.Model):
     costo = models.FloatField()
     duracion_servicio = models.TimeField()
     añadido = models.CharField(max_length=100)
+
     aeropuerto = models.OneToOneField(Aeropuerto, on_delete=models.CASCADE)  # Relación OneToOne
-    vuelo = models.ForeignKey(Vuelo, on_delete=models.CASCADE)  # Relación OneToOne
+    vuelo = models.ForeignKey(Vuelo, on_delete=models.CASCADE)  # Relación ManyToOne
     pasajeros = models.ManyToManyField(Pasajero)  # Relación ManyToMany
 
     def __str__(self):
@@ -264,12 +265,12 @@ class Servicio(models.Model):
 
 # Modelo Ruta
 class Ruta(models.Model):
-    origen = models.CharField(max_length=100)
+    salida = models.CharField(max_length=100)
     destino = models.CharField(max_length=100)
-    duracion = models.DateTimeField()
+    duracion = models.TimeField()
     distancia = models.FloatField()
     aeropuerto = models.ManyToManyField(Aeropuerto) # Relacion ManyToMany
 
 
     def __str__(self):
-        return f"Ruta de {self.origen.nombre} a {self.destino.nombre}"
+        return self.destino
