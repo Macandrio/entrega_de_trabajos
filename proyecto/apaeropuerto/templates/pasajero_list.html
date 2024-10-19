@@ -110,6 +110,8 @@
             <p><strong>Correo:</strong> {{ pasajero.email }}</p> <!-- Correo del pasajero -->
             <p><strong>Teléfono:</strong> {% if pasajero.telefono %} {{ pasajero.telefono }} {% else %} No disponible {% endif %}</p> <!-- Teléfono del pasajero -->
             <p><strong>Fecha de Nacimiento:</strong> {% if pasajero.fecha_nacimiento %} {{ pasajero.fecha_nacimiento }} {% else %} No disponible {% endif %}</p> <!-- Fecha de nacimiento del pasajero -->
+            <p><strong>Vuelo:</strong> {{ pasajero.vuelo.id }}</p> <!-- ID del pasajero -->
+            <p><strong>Del Aeropuerto:</strong> {{ pasajero.aeropuerto }}</p> <!-- Nombre del pasajero -->
         </article>
         {% endfor %}
         <div class="refresh">
