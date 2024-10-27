@@ -143,11 +143,11 @@ Ruta
 
 *    Rellenar las tablas con seeders.
 
-    Crear un backup de los datos con fixture.
+*    Crear un backup de los datos con fixture.
 
 *    No subir a git los archivos que no son necesarios que ya hemos explicado en clase
 
-    Explicar cualquier código que no se haya visto en clase. Funciones, parámetros, etc..
+*    Explicar cualquier código que no se haya visto en clase. Funciones, parámetros, etc..
 
     Debe entregarse el enlace de git.
 
@@ -155,10 +155,12 @@ Ruta
 
 comandos 
 
+source myvenv/bin/activate
 python manage.py migrate
 python manage.py makemigrations apaeropuerto
 python manage.py migrate apaeropuerto
 python manage.py seed apaeropuerto --number=5
+python manage.py dumpdata --indent 4 > apaeropuerto/fixtures/datos.json
 
 python manage.py createsuperuser
 python manage.py runserver
