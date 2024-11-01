@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listado de Aerolíneas</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #eef2f3;
+            color: #444;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #3498db;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        header a {
+            color: white;
+            text-decoration: none;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .container {
+            width: 85%;
+            margin: 20px auto;
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: #2980b9;
+            text-align: center;
+            margin-bottom: 25px;
+            font-size: 2em;
+        }
+
+        article {
+            background-color: #f9f9f9;
+            padding: 20px;
+            margin-bottom: 15px;
+            border-radius: 8px;
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.2s;
+        }
+
+        article:hover {
+            transform: scale(1.02);
+        }
+
+        article p {
+            margin: 5px 0;
+        }
+
+        article strong {
+            color: #333;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 30px;
+            padding: 15px;
+            background-color: #3498db;
+            color: white;
+            font-size: 14px;
+        }
+
+        .refresh {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .refresh a {
+            text-decoration: none;
+            padding: 10px 15px;
+            background-color: #2ecc71;
+            color: white;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .refresh a:hover {
+            background-color: #27ae60;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="/">Sistema de Aeropuertos</a>
+    </header>
+
+    <main class="container">
+        <h1>feedbacks de los vuelos que este el pasajero {{ pasajero.id }}</p></h1>
+        <article>
+            <h2>Pasajero</p></h2>
+                <p><strong>Id:</strong> {{ pasajero.id }}</p>
+                <p><strong>Nombre:</strong> {{ pasajero.nombre }}</p>
+                <p><strong>Apellido:</strong> {{ pasajero.apellido }}</p>
+                <p><strong>Email:</strong> {{ pasajero.email }}</p>
+                <p><strong>Telefono:</strong> {{ pasajero.telefono }}</p>
+                <p><strong>Fecha Nacimiento:</strong> {{ pasajero.fecha_nacimiento }}</p>
+        </article>
+        <h1>feedbacks</p></h1>
+            {% for feedback in feedbacks %}
+                <article>
+                    <h2>Datos del vuelo</h2>
+                    <p><strong>Vuelo ID:</strong> {{ feedback.vuelo.id }}</p>
+                    <p><strong>Hora Salida:</strong> {{ feedback.vuelo.hora_salida }}</p>
+                    <p><strong>Hora llegada:</strong> {{ feedback.vuelo.hora_llegada }}</p>
+                    <p><strong>Estado:</strong> {{ feedback.vuelo.estado }}</p>
+                    <p><strong>Duracion:</strong> {{ feedback.vuelo.duracion }}</p>
+                    <h2>Estadisticas del vuelo</h2>
+                    <p><strong>Fecha:</strong> {{ feedback.fecha_estadisticas }}</p>
+                    <p><strong>Asientos vendido:</strong> {{ feedback.numero_asientos_vendidos }}</p>
+                    <p><strong>Asientos cancelados:</strong> {{ feedback.numero_cancelaciones }}</p>
+                    <p><strong>feedback:</strong> {{ feedback.feedback_pasajeros }}</p>
+                </article>
+            {% endfor %}
+    </main>
+
+    <footer>
+        &copy; 2024 - Proyecto de Aeropuertos
+    </footer>
+
+</body>
+</html>
