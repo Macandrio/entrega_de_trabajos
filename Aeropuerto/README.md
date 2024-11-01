@@ -281,12 +281,14 @@ Ejercicio 10. Calcular cuantos pasajeros hay en un vuelo
 ---------------------------------------------------------------------------------------------------------------------------
 comandos 
 
+python3 -m venv myvenv
 source myvenv/bin/activate
 python manage.py migrate
 python manage.py makemigrations apaeropuerto
 python manage.py migrate apaeropuerto
 python manage.py seed apaeropuerto --number=20
 python manage.py dumpdata --indent 4 > apaeropuerto/fixtures/datos.json
+python manage.py loaddata apaeropuerto/fixtures/datos.json
 
 python manage.py createsuperuser
 python manage.py runserver
