@@ -1,0 +1,19 @@
+{% extends "principal.html" %}
+    {% block contenido %}
+        <div class="container">
+            <h2>Tareas Asignadas:</h2>
+            <ul>
+                {% for asignacion in asignaciontarea %}
+                <strong>Proyecto:</strong> {{ asignacion.tarea.id }}<br>
+                    <li>
+                        <strong>Usuario:</strong> {{ asignacion.usuario.nombre }}<br>
+                        <strong>Tarea:</strong> {{ asignacion.observaciones }}<br>
+                        <strong>Fecha de Asignación:</strong> {{ asignacion.fecha_asignacion }}<br>
+                        <strong>Observacion:</strong> {{ asignacion.observaciones }}<br>
+                    </li>
+                {% empty %}
+                    <li>No hay asignaciones para esta tarea.</li>
+                {% endfor %}
+            </ul>
+        </div>
+    {% endblock %}

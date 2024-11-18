@@ -2,7 +2,7 @@ from django.shortcuts import render
 from django.db.models import Prefetch, Q, Sum, Count
 from .models import (
     Aeropuerto, Vuelo, Pasajero, Equipaje, Aerolinea, 
-    VueloAerolinea, Reserva, Empleado, Asiento, Servicio ,ContactoAeropuerto , EstadisticasVuelo , PerfilPasajero
+    VueloAerolinea, Reserva, Empleado, Asiento, Servicio ,ContactoAeropuerto , EstadisticasVuelo , PerfilPasajero, Votacion , Banco
 )
 
 def index(request):
@@ -170,6 +170,7 @@ def cuantos_pasajeros_vuelo(request, id_vuelo):
     return render(request, 'consultas/total_pasajeros.html', {'total_pasajeros': total_pasajeros, 'pasajeros': pasajeros})
 
 
+
 # Error 400 - Solicitud Incorrecta
 def error_400(request, exception):
     return render(request, 'errors/400.html', status=400)
@@ -185,6 +186,18 @@ def error_404(request, exception):
 # Error 500 - Error Interno del Servidor
 def error_500(request):
     return render(request, 'errors/500.html', status=500)
+
+
+
+# Examen Luis
+
+
+def ultimo_voto(request, id_vuelo):
+    
+    comenetario = Votacion.objects.select_related('pasajero', 'vuelo')
+    comenetario = comenetario.filter(vuelo__id = id_vuelo).order_by('-fecha_voto')[:1] 
+
+    return render(request, 'Examenluis/ultimo-voto.html', {'comenetario': comenetario})
 
 
 

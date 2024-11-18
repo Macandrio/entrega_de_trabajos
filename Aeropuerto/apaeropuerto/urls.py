@@ -30,7 +30,8 @@ urlpatterns = [
     path('consulta/pasajeros-vuelo/<int:id_vuelo>/', views.cuantos_pasajeros_vuelo, name='cuantos_pasajeros_vuelo'),
 
 
-
+    #Examen Luis
+    path('voto-pasajero/<int:id_vuelo>/', views.ultimo_voto, name='ultimo_voto'),
 
 
 ]

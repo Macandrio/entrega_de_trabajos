@@ -1,0 +1,18 @@
+{% extends "principal.html" %}
+    {% block contenido %}
+        <article>
+            <h2>Proyecto</h2>
+            <p><strong>Nombre:</strong> {{ proyectoo.nombre }}</p>
+            <p><strong>Descripcion:</strong> {{ proyectoo.descripcion }}</p>
+            <p><strong>Duracion:</strong> {{ proyectoo.duracion }}</p>
+            <p><strong>Fecha comienzo:</strong> {{ proyectoo.fecha_inicio }}</p>
+            <p><strong>Fecha final:</strong> {{ proyectoo.fecha_fin |date:"Y-m-d"}}</p>
+            <p><strong>Creador:</strong> {{ proyectoo.creador }}</p>
+            <p><strong>Colaboradores:</strong></p>
+            <ul>
+                {% for colaborador in proyectoo.colaboradores.all %}
+                    <li>{{ colaborador.nombre }}</li>
+                {% endfor %}
+            </ul>
+        </article>
+    {% endblock %}

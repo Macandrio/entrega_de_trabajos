@@ -273,3 +273,25 @@ class Empleado(models.Model):
 
     def __str__(self):
         return f"{self.nombre} {self.apellido}, {self.cargo}"
+    
+
+
+class Votacion(models.Model):
+    puntuacion = models.IntegerField()
+    comentario = models.CharField(max_length=100)
+    fecha_voto = models.DateTimeField(default=timezone.now)
+
+    pasajero = models.ForeignKey(Pasajero , on_delete=models.CASCADE , related_name = 'voto_pasajero')
+    vuelo = models.ForeignKey(Vuelo , on_delete=models.CASCADE , related_name = 'voto_vuelo')
+
+
+class Banco(models.Model):
+    Sucursal = [
+        ('C', 'CAIXA'),
+        ('B', 'BBVA'),
+        ('U', 'UNICAJA'),
+        ('I', 'ING'),
+    ]
+
+    banco = models.CharField(max_length=1,choices=Sucursal)
+    pasajero = models.OneToOneField(Pasajero , on_delete=models.CASCADE , related_name = 'banco_pasajero')

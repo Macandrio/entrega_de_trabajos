@@ -1,7 +1,9 @@
 from django.contrib import admin
 from .models import (
     Aeropuerto, Vuelo, Pasajero, Equipaje, Aerolinea,
-    VueloAerolinea, Reserva, Empleado, Asiento, Servicio , ContactoAeropuerto , EstadisticasVuelo , PerfilPasajero ,
+    VueloAerolinea, Reserva, Empleado, Asiento, Servicio ,
+    ContactoAeropuerto , EstadisticasVuelo , PerfilPasajero ,
+    Votacion , Banco
 )
 
 
@@ -19,3 +21,5 @@ admin.site.register(Servicio)
 admin.site.register(ContactoAeropuerto)
 admin.site.register(EstadisticasVuelo)
 admin.site.register(PerfilPasajero)
+admin.site.register(Votacion)
+admin.site.register(Banco)

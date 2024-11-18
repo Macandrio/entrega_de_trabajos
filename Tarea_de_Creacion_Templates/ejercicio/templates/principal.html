@@ -1,0 +1,33 @@
+<html>
+    {% load static %}
+    <head>
+        <title>Mi biblioteca</title>
+        <link rel="stylesheet" href="{% static 'css/estilos.css' %}">
+        <link rel="stylesheet" href="{% static 'css/menu.css' %}">
+    </head>
+    <body>
+        
+        <!-- Encabezado -->
+        <header class="header-section">
+            <img src="{% static 'imagenes/images.jpeg' %}" alt="Imagen de Django" class="header-image">
+            <h1 class="main-title">BIBLIOTECA</h1>
+        </header>
+
+        <!-- Menú de navegación -->
+        <nav class="navigation-section">
+            {% include 'estructura/menu.html' %}
+        </nav>
+
+        <!-- Contenido principal -->
+        <main class="content-section">
+            {% block contenido %}
+            <!-- Puedes agregar contenido aquí o sobreescribirlo desde otros templates extendidos -->
+            {% endblock %}
+        </main>
+
+        <!-- Pie de página -->
+        <footer class="footer-section">
+            {% include 'estructura/pie.html' %}
+        </footer>
+    </body>
+</html>

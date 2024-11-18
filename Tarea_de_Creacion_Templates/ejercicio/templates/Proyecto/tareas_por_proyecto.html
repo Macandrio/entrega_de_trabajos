@@ -1,0 +1,18 @@
+{% extends "principal.html" %}
+    {% block contenido %}
+        <div class="container">
+            <h1>Tareas del Proyecto</h1>
+            <ul>
+                {% for tarea in tareas %}
+                    <article>
+                        <h3>Título: {{ tarea.titulo }}</h3>
+                        <p><strong>Descripción:</strong> {{ tarea.descripcion }}</p>
+                        <p><strong>Prioridad:</strong> {{ tarea.prioridad }}</p>
+                        <p><strong>Estado:</strong> {{ tarea.estado }}</p>
+                        <p><strong>Fecha de Creación:</strong> {{ tarea.fecha_creacion }}</p>
+                    </article>
+                {% endfor %}
+            </ul>
+        </div>
+    {% endblock %}
+   

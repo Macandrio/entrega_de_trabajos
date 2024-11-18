@@ -1,0 +1,22 @@
+{% extends "principal.html" %}
+    {% block contenido %}
+            <div class="container">
+                <h1>Listado de Proyectos</h1>
+                {% if usuarios %}
+                    {% for proyectoo in dame_proyecto %}
+                        {% include 'listas/Proyectos.html' %}
+                        <p><strong>Colaboradores:</strong> ({{ proyectoo.colaboradores.all|length }})</p>
+                            <ul>
+                                {% for colaborador in proyectoo.colaboradores.all %}
+                                    <li>{{ colaborador.nombre }}</li>
+                                {% endfor %}
+                            </ul>
+                    {% endfor %}
+                {% else %}
+                    <p>No hay proyecto.</p>
+                {% endif %}
+                    <div class="refresh">
+                        <a href="{% url 'dame_proyecto' %}">Refrescar la Lista</a>
+                    </div>
+            </div>
+    {% endblock %}

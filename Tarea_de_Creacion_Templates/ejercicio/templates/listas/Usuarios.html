@@ -1,0 +1,18 @@
+{% extends "principal.html" %}
+    {% block contenido %}
+        <div class="container">
+            <h1>Listado de Usuario</h1>
+            {% for usuario in usuarios %}
+                <article>
+                    <h2>Proyecto</h2>
+                    <p><strong>Nombre:</strong> {{ usuario.nombre|cut:"a" }}</p>
+                    <p><strong>Email:</strong> {{ usuario.email|capfirst }}</p>
+                    <p><strong>Contraseña:</strong> {{ usuario.password }}</p>
+                    <p><strong>Fecha registro:</strong> {{ usuario.fecha_registro }}</p>
+                </article>
+            {% endfor %}
+            <div class="refresh">
+                <a href="{% url 'lista_usuario' %}">Refrescar la Lista</a>
+            </div>
+        </div>
+    {% endblock %}
