@@ -16,6 +16,7 @@ body {
 
 .content-section {
     flex: 1; /* Asegura que el contenido ocupe el espacio disponible */
+    margin-top: 70px;
 }
 .container {
     width: 90%;
@@ -31,6 +32,7 @@ h1 {
     text-align: center;
     margin-bottom: 25px;
     font-size: 2em;
+    margin-top: 20px;
 }
 
 article {
