@@ -1,180 +1,45 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inicio - Sistema de Gestión de Aeropuertos</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f7f7f7;
-            color: #333;
-            margin: 0;
-            padding: 0;
-        }
+{% extends "Principal.html" %}
 
-        header {
-            background-color: #2c3e50;
-            color: white;
-            padding: 20px;
-            text-align: center;
-        }
+{% load static %}
+{% block link_css %}
+    <link rel="stylesheet" href="{% static 'css/estilos.css' %}">
+{% endblock %}
 
-        header a {
-            color: white;
-            text-decoration: none;
-            font-size: 28px;
-        }
-
-        .container {
-            width: 90%;
-            margin: 20px auto;
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
-        }
-
-        h1 {
-            text-align: center;
-            color: #2980b9;
-            margin-bottom: 30px;
-        }
-
-        .link-list {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
-        }
-
-        .link-item {
-            background-color: #3498db;
-            padding: 15px;
-            border-radius: 6px;
-            text-align: center;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-            transition: background-color 0.3s;
-        }
-
-        .link-item a {
-            text-decoration: none;
-            color: white;
-            font-size: 18px;
-            font-weight: bold;
-        }
-
-        .link-item:hover {
-            background-color: #2980b9;
-        }
-
-        footer {
-            text-align: center;
-            margin-top: 40px;
-            padding: 20px;
-            background-color: #2c3e50;
-            color: white;
-        }
-    </style>
-</head>
-<body>
-
-    <header>
-        <h1><a href="/">Sistema de Gestión de Aeropuertos</a></h1>
-    </header>
-
-    <div class="container">
-        <h2>Páginas del Sistema del Aeropuerto</h2> <!-- Cambiado de h1 a h2 -->
-        <div class="link-list">
-            <div class="link-item">
-                <a href="{% url 'lista_aeropuerto' %}">Aeropuertos</a>
-            </div>
-            <div class="link-item">
-                <a href="{% url 'lista_vuelo' %}">Vuelos</a>
-            </div>
-            <div class="link-item">
-                <a href="{% url 'lista_pasajero' %}">Pasajeros</a>
-            </div>
-            <div class="link-item">
-                <a href="{% url 'lista_equipaje' %}">Equipajes</a>
-            </div>
-            <div class="link-item">
-                <a href="{% url 'lista_aerolineas' %}">Aerolíneas</a>  
-            </div>
-            <div class="link-item">
-                <a href="{% url 'lista_vuelos_aerolineas' %}">Vuelos de Aerolínea</a>  
-            </div>
-            <div class="link-item">
-                <a href="{% url 'lista_reserva' %}">Reservas</a>
-            </div>
-            <div class="link-item">
-                <a href="{% url 'lista_empleado' %}">Empleados</a>
-            </div>
-            <div class="link-item">
-                <a href="{% url 'lista_silla' %}">Sillas</a>
-            </div>
-            <div class="link-item">
-                <a href="{% url 'lista_servicio' %}">Servicios</a>
-            </div>
-            <div class="link-item">
-                <a href="{% url 'lista_EstadisticasVuelo' %}">Estadisticas de Vuelo</a>
-            </div>
-            <div class="link-item">
-                <a href="{% url 'lista_ContactoAeropuerto' %}">Contacto del Aeropuerto</a>
-            </div>
-            <div class="link-item">
-                <a href="{% url 'lista_PerfilPasajero' %}">Perfil Pasajero</a>
-            </div>
-            
+{% block contenido %}
+<div class="container">
+    <h2>Consultas de Aeropuerto</h2> <!-- Cambiado de h1 a h2 -->
+    <div class="link-list">
+        <div class="link-item">
+            <a href="{% url 'pasajeros_vuelo' 1 %}">Pasajeros del vuelo 1</a>
         </div>
-    </div>
-    <div class="container">
-        <h2>Consultas de Aeropuerto</h2> <!-- Cambiado de h1 a h2 -->
-        <div class="link-list">
-            <div class="link-item">
-                <a href="{% url 'pasajeros_vuelo' 3 %}">Pasajeros del vuelo 1</a>
-            </div>
-            <div class="link-item">
-                <a href="{% url 'vuelo_volando_año' 1990 %}">Pasajeros del vuelo 1990</a>
-            </div>
-            <div class="link-item">
-                <a href="{% url 'texto_vuelo_aerolinea' 1 'Alejandro' %}">texto de una aerolinea</a>
-            </div>
-            <div class="link-item">
-                <a href="{% url 'historial_feedbacks_pasajero' 5 %}">feedback de un pasajero</a>
-            </div>
-            <div class="link-item">
-                <a href="{% url 'vuelos_origen_destino' 17 37 %}">Vuelo especifico entre Aeropuertos</a>
-            </div>
-            <div class="link-item">
-                <a href="{% url 'reservas_por_metodo_y_año' 'efectivo' 2024 %}">Reserva por pago y año</a>
-            </div>
-            <div class="link-item">
-                <a href="{% url 'vuelos_cortos_origen_destino' 1 2 1%}">vuelos entre aeropuertos</a>
-            </div>
-            <div class="link-item">
-                <a href="{% url 'peso_equipaje_vuelo' 27 %}">Ver Peso de equipaje</a>
-            </div>
-            <div class="link-item">
-                <a href="{% url 'vuelos_sin_operacion' 1 %}">Ver Vuelos sin Fecha de Operación</a>
-            </div>
-            <div class="link-item">
-                <a href="{% url 'cuantos_pasajeros_vuelo' 2 %}">Ver Contar pasajeros</a>
-            </div>
+        <div class="link-item">
+            <a href="{% url 'vuelo_volando_año' 1990 %}">Pasajeros del año 1990</a>
         </div>
-    </div>
-
-    <div class="container">
-        <h2>Consultas del Examen de Luis</h2> <!-- Cambiado de h1 a h2 -->
-        <div class="link-list">
-            <div class="link-item">
-                <a href="{% url 'ultimo_voto' 1 %}">Ultimo voto</a>
-            </div>
+        <div class="link-item">
+            <a href="{% url 'texto_vuelo_aerolinea' 27 'Alejandro' %}">texto de una aerolinea</a>
         </div>
+        <div class="link-item">
+            <a href="{% url 'historial_feedbacks_pasajero' 5 %}">feedback de un pasajero</a>
+        </div>
+        <div class="link-item">
+            <a href="{% url 'vuelos_origen_destino' 1 2 %}">Vuelo especifico entre Aeropuertos</a>
+        </div>
+        <div class="link-item">
+            <a href="{% url 'reservas_por_metodo_y_año' 'tarjeta' 2024 %}">Reserva por pago y año</a>
+        </div>
+        <div class="link-item">
+            <a href="{% url 'vuelos_cortos_origen_destino' 1 2 1%}">vuelos entre aeropuertos</a>
+        </div>
+        <div class="link-item">
+            <a href="{% url 'peso_equipaje_vuelo' 2 %}">Ver Peso de equipaje</a>
+        </div>
+        <div class="link-item">
+            <a href="{% url 'vuelos_sin_operacion' 1 %}">Ver Vuelos sin Fecha de Operación</a>
+        </div>
+        <div class="link-item">
+            <a href="{% url 'cuantos_pasajeros_vuelo' 1 %}">Ver Contar pasajeros</a>
+        </div>
+        
+
     </div>
-
-    <footer>
-        &copy; 2024 - Sistema de Aeropuertos
-    </footer>
-
-</body>
-</html>
+{% endblock %}

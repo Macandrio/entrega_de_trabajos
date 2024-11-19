@@ -298,5 +298,50 @@ python manage.py createsuperuser
 python manage.py runserver
 
 
+git add .
+git commit -m 'Completado'
+git push
+git pull
+
 ---------------------------------------------------------------------------------------------------------------------------
 
+Preguntar jorge:
+En historial_feedbacks_pasajero.html se puede poner {% include 'Listas/Vuelo.html' %} esque no me sale
+vuelo volando año.html no puedo poner {% include 'Listas/Estadistica.html' %}
+en histortial_feedbacks en consulta el atributo duracion no se le puede añadir |date:"d H:i" preguntar porque
+en texto vuelo aerolinea no puedo poner |date:"d-m-Y H:i:s"
+
+----------------------------------------------------------------------------------------------------------------------------
+Usar al menos 5 templates tags diferentes: if-else, for..empty,en algunas páginas del proyecto. Indicar  cuales y donde en el README
+
+    1.En casi todas las tamplates/paginas uso {% for %}
+    2.En muchas paginas uso {% if %} por ejemplo => templates/Listas/Vuelo_Aerolinea.html
+    3.En todas las templates/paginas uso {% include %}
+    4.En todas las templates/paginas uso {% block %} y {% endblock %}
+    5.En Principal uso {% static %}
+    6.En el index uso {% url %} // para poner enlaces
+    7.En Principal uso {% comment %}  {% endcomment %} // para poner comentarios
+    8.En templates/consultas pasajeros_vuelo.html uso { forloop.counter } //contador
+
+
+Usar al menos 5 operadores diferentes. Indicar cuales y dónde en el README
+
+    1.En consultas/pasajero_vuelo hay un operador <
+    2.En consultas/historial_feedbacks... hay un if else
+    3.En consultas/pasajeros_vuelo hay un > el .count cuenta cuantos elementos hay
+    4.En consultas/peso_equipaje_vuelo hay  =< => y un and
+    5.En consultas/reservas por metodo de pago hay  == y or
+
+
+Usa al menos 10 template filters en el proyecto
+
+    1.En consultas/reservas => |lower  //pone la cadena en minuscula
+    2.En Listas/Aerolinea => |date:"d-m-Y" //pone dia - mes - año
+    3.En Listas/Vuelo_Aerolinea => default:"Sin valor"
+    4.En Listas/Aerolinea => |upper //pone la cadena en mayusculas
+    5.En Listas/Reservas => yesno:"Pagado,Pendiente de pago ,Sin datos" //para booleanos
+    6.En Listas/Silla => |add:"55" //suma el valor a una variable
+    7.En Listas/Pasajero => |capfirst // capitaliza solo la primera letra de una cadena, dejando las demás letras sin cambios
+    8.En Listas/Estadisticas => |truncatechars:80 //la cadena solo puede tener maximo 80 caracteres
+    9.En Listas/Aeropuerto => |title // pone en mayuscula la primera letra de cada palabra
+    10.En Listas/Equipaje => |floatformat:2 // pone 2 numeros detras de la coma

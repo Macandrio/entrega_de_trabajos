@@ -1,7 +1,7 @@
 from django.db import models
 from django.utils  import timezone
 from django.core.exceptions import ValidationError
-from django.core.validators import MaxValueValidator, RegexValidator
+from django.core.validators import MaxValueValidator
 
 
 
@@ -147,7 +147,7 @@ class Pasajero(models.Model):
 #Modelo PerfilPasajero       
 class PerfilPasajero(models.Model):
     direccion = models.CharField(max_length=255, blank=True)
-    documento_identidad = models.CharField(max_length=9, unique=True)
+    documento_identidad = models.CharField(max_length=9)
     nacionalidad = models.CharField(max_length=50, blank=True)
     vivienda = models.CharField(max_length=50, blank=True)
 
@@ -273,25 +273,3 @@ class Empleado(models.Model):
 
     def __str__(self):
         return f"{self.nombre} {self.apellido}, {self.cargo}"
-    
-
-
-class Votacion(models.Model):
-    puntuacion = models.IntegerField()
-    comentario = models.CharField(max_length=100)
-    fecha_voto = models.DateTimeField(default=timezone.now)
-
-    pasajero = models.ForeignKey(Pasajero , on_delete=models.CASCADE , related_name = 'voto_pasajero')
-    vuelo = models.ForeignKey(Vuelo , on_delete=models.CASCADE , related_name = 'voto_vuelo')
-
-
-class Banco(models.Model):
-    Sucursal = [
-        ('C', 'CAIXA'),
-        ('B', 'BBVA'),
-        ('U', 'UNICAJA'),
-        ('I', 'ING'),
-    ]
-
-    banco = models.CharField(max_length=1,choices=Sucursal)
-    pasajero = models.OneToOneField(Pasajero , on_delete=models.CASCADE , related_name = 'banco_pasajero')
