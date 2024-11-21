@@ -1,9 +1,17 @@
+# De que va el trabajo => 7
+# Tema Modelos => Linea 13
+# Tema QuerySet = Linea 228
+# Tema Templates => Linea 299
+
+
 # entrega_de_trabajos
 Mi pagina web va a consistir en un Aeropuerto en general con sus aerolineas que serian las distintas empresa como rayane, vueling ... ,
 los vuelos que hay con sus pasajeros que seran las personas , los trabajadores que trabajen en el aeropuerto , el equipage que lleve una persona tambien las reservas de las personas , las ruta que deben tomar los aviones, y lod sitios del avion donde se sienta la gente.
 
 sera una pagina donde se controlara toda la informacion de un aeropuerto 
 -------------------------------------------------------------------------------------------------------------------------------------------
+
+# Tema Modelos
 Aeropuerto
     Atributos: 4
         Nombre (varchar ,maximo de caracteres 100, Definimos el nombre de la tabla admin)
@@ -185,18 +193,18 @@ Ruta
 
 -------------------------------------------------------------------------------------------------------------------
 
-Modelos 
+# Modelos 
 
 ManyToOne = Vuelo(origen) , Vuelo(destino) , Equipaje(pasajero) , Reserva(pasajero) , Reserva(Vuelo)
 ManyToMany = Aerolínea(Aeropuerto) , Vuelo(Aerolinea) , Pasajero(vuelo)
 OneToOne = ContactoAeropuerto(Aeropuerto) , EstadisticasVuelo(Vuelo), PerfilPasajero(pasajero)
 
-atributo
+# atributo
 
 CharField, IntegerField, EmailField, DateField, DateTimeField,
 BooleanField, DurationField, TextField, FloatField, DecimalField
 
-parametros
+# parametros
 
 1. max_length = 100  => maximo de caracteres 100
 2. verbose_name="Aeropuerto" => como se ve en el administrador en el formulario
@@ -216,6 +224,9 @@ parametros
 
 
 -------------------------------------------------------------------------------------------------------------------
+
+# Tema QuerySet:
+
 Ejercicio 1. Todos los pasajeros que esten asociados a un vuelo con una relación reversa
 desde la tabla vuelo cojo los datos y con el Prefetch hago la relacion inversa con el .get cojo el id expecifico de la tabla.
 
@@ -259,59 +270,8 @@ Ejercicio 10. Calcular cuantos pasajeros hay en un vuelo
     Aqui uso count para contar
 
 
--------------------------------------------------------------------------------------------------------------------
-* 10 URls, con sus vistas correspondientes, usando QuerySet y las plantillas correspondiente
-* En las URLs, QuerySet y Views debe utilizarse las funciones vistas en clase e incluir la obtención de datos entre tablas ManytoMany, OnetoOne y ManyToOne
-* Siempre debe incluirse un comentario en cada Vista, indicando lo que hace dicha Vista y en el README.MD detallar todas las URLs y los requisitos que se cumplen!
-* Debe incluirse una página de Error personalizada para cada uno de los 4 tipos de errores posible
-* Las urls deben funcionar y mostrar resultados. En el caso de que de error o no muestre resultado alguno no será valida.
-* Debe mostrarse siempre toda la información de los modelos relacionados
-* Las querys deben estar optimizadas 
-* Debe existir al menos una URL con r_path, otra usando dos paramétros, otra usando un parámetro entero y otra usando un parámetro str
-* Debe  existir al menos una URL con: filtros con AND, filtros con OR, aggregate, usando una relación reversa, order_by, limit, filtro con None en una tabla intermedia.
-* Debe existir al menos ua URL con un filtro de aggregate. Esta parte es de investigación porque no se ha visto en clase.
-* Debe existir un index desde dónde puedo acceder a todas las URLS. 
-* Recordad los archivos que no pueden subirse a GIT.
-* Crear un fixture con los datos para que pueda realizar las pruebas.
-* Poner el proyecto en modo Producción.
-* Si el proyecto no me funciona al lanzarlo, no puedo evaluarlo, por lo tanto aseguraros que se puede descargar el proyecto sin problema desde git desde otro sitio, ejecutar los fixtures y probar las URLs.
-* Cualqueir requisito que no se cumpla quitará un punto. Por cada funcionalidad no realizada correctamente también se quita un punto.
-
 
 ---------------------------------------------------------------------------------------------------------------------------
-comandos 
-
-python3 -m venv myvenv
-source myvenv/bin/activate
-
-python -m pip install --upgrade pip
-pip install -r requirements.txt
-
-python manage.py migrate
-python manage.py makemigrations apaeropuerto
-python manage.py migrate apaeropuerto
-python manage.py seed apaeropuerto --number=20
-python manage.py dumpdata --indent 4 > apaeropuerto/fixtures/datos.json
-python manage.py loaddata apaeropuerto/fixtures/datos.json
-
-python manage.py createsuperuser
-python manage.py runserver
-
-
-git add .
-git commit -m 'Completado'
-git push
-git pull
-
----------------------------------------------------------------------------------------------------------------------------
-
-Preguntar jorge:
-En historial_feedbacks_pasajero.html se puede poner {% include 'Listas/Vuelo.html' %} esque no me sale
-vuelo volando año.html no puedo poner {% include 'Listas/Estadistica.html' %}
-en histortial_feedbacks en consulta el atributo duracion no se le puede añadir |date:"d H:i" preguntar porque
-en texto vuelo aerolinea no puedo poner |date:"d-m-Y H:i:s"
-
-----------------------------------------------------------------------------------------------------------------------------
 Usar al menos 5 templates tags diferentes: if-else, for..empty,en algunas páginas del proyecto. Indicar  cuales y donde en el README
 
     1.En casi todas las tamplates/paginas uso {% for %}
@@ -345,3 +305,28 @@ Usa al menos 10 template filters en el proyecto
     8.En Listas/Estadisticas => |truncatechars:80 //la cadena solo puede tener maximo 80 caracteres
     9.En Listas/Aeropuerto => |title // pone en mayuscula la primera letra de cada palabra
     10.En Listas/Equipaje => |floatformat:2 // pone 2 numeros detras de la coma
+
+---------------------------------------------------------------------------------------------------------------------------
+# comandos :
+
+python3 -m venv myvenv
+source myvenv/bin/activate
+
+python -m pip install --upgrade pip
+pip install -r requirements.txt
+
+python manage.py migrate
+python manage.py makemigrations apaeropuerto
+python manage.py migrate apaeropuerto
+python manage.py seed apaeropuerto --number=20
+python manage.py dumpdata --indent 4 > apaeropuerto/fixtures/datos.json
+python manage.py loaddata apaeropuerto/fixtures/datos.json
+
+python manage.py createsuperuser
+python manage.py runserver
+
+
+git add .
+git commit -m 'Completado'
+git push
+git pull
