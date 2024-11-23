@@ -5,9 +5,12 @@
     <link rel="stylesheet" href="{% static 'css/estilos.css' %}">
 {% endblock %}
 
+{% block cabecera %}
+    <h1>Consultas de Aeropuerto</h1>
+{% endblock %}
+
 {% block contenido %}
 <div class="container">
-    <h2>Consultas de Aeropuerto</h2> <!-- Cambiado de h1 a h2 -->
     <div class="link-list">
         <div class="link-item">
             <a href="{% url 'pasajeros_vuelo' 1 %}">Pasajeros del vuelo 1</a>

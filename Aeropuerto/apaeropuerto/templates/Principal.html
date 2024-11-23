@@ -13,9 +13,13 @@
         {% comment %} Encabezado {% endcomment %}
         <header class="custom-header">
             <a href="/"><img src="{% static 'imagenes/logo.jpeg' %}" alt="Logo" class="header-logo"></a>
-            <h1 class="header-title"><a href="/">Sistema de Gestión de Aeropuertos</a></h1>
+                <h1 class="header-title"><a href="/">Sistema de Gestión de Aeropuertos</a></h1>
             {% include 'Estructura/menu.html' %}
         </header>
+
+        {% comment %} Cabecera {% endcomment %}
+        {% block cabecera %}
+        {% endblock %}
 
         {% comment %} Contenido {% endcomment %}
         <main class="content-section">
