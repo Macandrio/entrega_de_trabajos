@@ -18,6 +18,10 @@
             {% include 'estructura/menu.html' %}
         </nav>
 
+        {% block cabecera %}
+            <!-- Puedes agregar contenido aquí o sobreescribirlo desde otros templates extendidos -->
+        {% endblock %}
+
         <!-- Contenido principal -->
         <main class="content-section">
             {% block contenido %}
