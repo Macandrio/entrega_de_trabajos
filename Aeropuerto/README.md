@@ -310,7 +310,59 @@ Usa al menos 10 template filters en el proyecto
 ---------------------------------------------------------------------------------------------------------------------------
 # Tema formularios CRUD :
 
+validaciones:
+AeropuertoForm
+nombre: Valida que no esté vacío y que no exista otro aeropuerto con el mismo nombre.
+capacidad_maxima: Valida que no supere 150.
+
+BusquedaAvanzadaAeropuertoForm
+textoBusqueda: Valida que no esté vacío y que tenga al menos 1 carácter.
+
+ContactoAeropuertoForm
+nombre_contacto: Valida que no esté vacío.
+telefono_contacto: Valida que tenga exactamente 9 dígitos.
+
+BusquedaAvanzadaContacto
+Campos generales: Al menos uno debe estar relleno.
+años_trabajados: No puede ser menor a 0.
+
+EstadisticasVueloForm
+numero_cancelaciones: No puede superar el número de asientos vendidos.
+numero_asientos_vendidos: Debe ser mayor a 0.
+
+BusquedaAvanzadaEstadisticas
+Campos generales: Al menos uno debe estar rellenado.
+numero_asientos_vendidos y numero_cancelaciones: Valida que el número de asientos vendidos no sea menor que las cancelaciones.
+
+AerolineaForm
+nombre:Valida que no estén vacíos y que no exista otra aerolínea con el mismo nombre.
+codigo_aerolinea: Valida que no estén vacíos y que no exista otra aerolínea con el mismo nombre.
+
+BusquedaAvanzadaAerolinea
+Campos generales: Al menos uno debe estar rellenado.
+nombre: Debe tener al menos 3 caracteres.
+
+VueloForm
+origen y destino: No pueden ser iguales.
+hora_llegada: Debe ser posterior a la hora de salida.
+
+BusquedaAvanzadaVuelo
+hora_salida y hora_llegada: Valida que la hora de salida no sea mayor que la hora de llegada.
+origen y destino: No pueden ser iguales.
+
+PasajeroForm
+telefono: Debe tener exactamente 9 dígitos y contener solo números.
+fecha_nacimiento: No puede ser futura ni mayor a 100 años en el pasado.
+
+BusquedaAvanzadaPasajero
+nombre: no puede estar vacio.
+telefono: Debe tener exactamente 9 dígitos.
+
+
+
+
 widgets usados:
+
 1.placeholder: Texto de ayuda que aparece dentro del campo.
 2.maxlength: Límite máximo de caracteres.
 3.min: Definen el rango de valores minimo.
@@ -318,6 +370,9 @@ widgets usados:
 5.class: Define la clase CSS para estilizar el elemento.
 6.date:  usar el selector de fechas del navegador.
 7.datetime-local:  para permitir la selección combinada de fecha y hora.
+
+
+
 
 
 
