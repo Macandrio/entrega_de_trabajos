@@ -1,6 +1,11 @@
 {% extends "Principal.html" %}
+{% load static %}
+{% block link_css %}
+    <link rel="stylesheet" href="{% static 'css/estilos.css' %}">
+{% endblock %}
 
 {% block contenido %}
+
     <div class="container">
         <h1>Listado de Aeropuertos</h1>
         {% for aeropuerto in aeropuertos %}

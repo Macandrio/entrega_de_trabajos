@@ -98,11 +98,6 @@ class Vuelo(models.Model):
     destino = models.ForeignKey(Aeropuerto , on_delete=models.CASCADE ,related_name='vuelos_de_destino') #ManyToOne
     aerolinea = models.ManyToManyField(Aerolinea , through='VueloAerolinea' , related_name='vuelo_aerolinea') # tabla ManyToMany intermedia
 
-    def clean(self):
-        # Verificar que el aeropuerto de origen y destino no sean el mismo
-        if self.origen == self.destino:
-            raise ValidationError("El aeropuerto de origen y destino no pueden ser el mismo.")
-
     def save(self, *args, **kwargs):
         # Calcular la duración como la diferencia entre hora_llegada y hora_salida
         if self.hora_llegada and self.hora_salida:

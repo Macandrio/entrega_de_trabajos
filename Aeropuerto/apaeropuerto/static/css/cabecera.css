@@ -110,3 +110,27 @@
     text-decoration: none; /* Asegura que no se muestre subrayado al pasar el ratón */
     color: inherit; /* Previene cambios de color al pasar el ratón */
 }
+
+/* Elimina el color de fondo del menú */
+.menu {
+    background-color: transparent; /* Hace el fondo transparente */
+    box-shadow: none; /* Elimina sombras si las hay */
+    border: none; /* Elimina bordes si los tiene */
+}
+
+/* Elimina el color de fondo del formulario */
+.menuformulario {
+    background-color: transparent; /* Hace el fondo transparente */
+    box-shadow: none; /* Elimina sombras si las hay */
+    border: none; /* Elimina bordes si los tiene */
+}
+
+.dropdown-menu {
+    border: none; /* Elimina los bordes del menú */
+    box-shadow: none; /* Elimina sombras */
+}
+.dropdown .btn {
+    border: none; /* Elimina cualquier borde del botón */
+    box-shadow: none; /* Elimina sombras si existen */
+    background: transparent; /* Si es necesario, elimina el fondo */
+}

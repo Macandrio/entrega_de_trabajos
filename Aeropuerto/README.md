@@ -2,6 +2,7 @@
 # Tema Modelos => Linea 13
 # Tema QuerySet = Linea 228
 # Tema Templates => Linea 299
+# Tema formularios CRUD => Linea 311
 
 
 # entrega_de_trabajos
@@ -307,6 +308,20 @@ Usa al menos 10 template filters en el proyecto
     10.En Listas/Equipaje => |floatformat:2 // pone 2 numeros detras de la coma
 
 ---------------------------------------------------------------------------------------------------------------------------
+# Tema formularios CRUD :
+
+widgets usados:
+1.placeholder: Texto de ayuda que aparece dentro del campo.
+2.maxlength: Límite máximo de caracteres.
+3.min: Definen el rango de valores minimo.
+4.max: Definen el rango de valores maximo.
+5.class: Define la clase CSS para estilizar el elemento.
+6.date:  usar el selector de fechas del navegador.
+7.datetime-local:  para permitir la selección combinada de fecha y hora.
+
+
+
+---------------------------------------------------------------------------------------------------------------------------
 # comandos :
 
 python3 -m venv myvenv
@@ -320,7 +335,7 @@ python manage.py makemigrations apaeropuerto
 python manage.py migrate apaeropuerto
 python manage.py seed apaeropuerto --number=20
 python manage.py dumpdata --indent 4 > apaeropuerto/fixtures/datos.json
-python manage.py loaddata apaeropuerto/fixtures/datos.json
+python manage.py loaddata apaeropuerto/fixtures/datos2.json
 
 python manage.py createsuperuser
 python manage.py runserver
@@ -330,3 +345,84 @@ git add .
 git commit -m 'Completado'
 git push
 git pull
+
+-----------------------------------------------------------------------------------
+from django.db.models import Prefetch
+
+# Aeropuerto
+Aeropuerto.objects.prefetch_related(
+    Prefetch('aerolinea_de_aeropuerto'),  # ManyToMany con Aerolínea
+    Prefetch('vuelos_de_origen'),         # ManyToOne reversa con Vuelo (origen)
+    Prefetch('vuelos_de_destino'),        # ManyToOne reversa con Vuelo (destino)
+    Prefetch('servicio_aeropuerto')       # ManyToMany con Servicio
+)
+
+# ContactoAeropuerto
+ContactoAeropuerto.objects.select_related(
+    'aeropuerto'                          # OneToOne con Aeropuerto
+)
+
+# Aerolínea
+Aerolinea.objects.prefetch_related(
+    Prefetch('aeropuerto'),               # ManyToMany con Aeropuerto
+    Prefetch('vuelo_aerolinea')           # ManyToMany con Vuelo
+)
+
+# Vuelo
+Vuelo.objects.prefetch_related(
+    Prefetch('vuelo_pasajero'),           # ManyToMany con Pasajero
+    Prefetch('asiento_vuelo'),            # ManyToOne con Asiento
+    Prefetch('vuelo_reserva'),            # ManyToOne con Reserva
+    Prefetch('vuelo_media_aerolinea'),    # ManyToOne con VueloAerolinea
+    Prefetch('vuelo_datos')               # OneToOne con EstadisticasVuelo
+).select_related(
+    'origen',                             # ManyToOne con Aeropuerto (origen)
+    'destino'                             # ManyToOne con Aeropuerto (destino)
+)
+
+# EstadisticasVuelo
+EstadisticasVuelo.objects.select_related(
+    'vuelo'                               # OneToOne con Vuelo
+)
+
+# Pasajero
+Pasajero.objects.prefetch_related(
+    Prefetch('vuelo_pasajero'),           # ManyToMany con Vuelo
+    Prefetch('equipaje_pasajero'),        # ManyToOne con Equipaje
+    Prefetch('reserva_pasajero'),         # ManyToOne con Reserva
+    Prefetch('pajarelo_asiento'),         # ManyToOne con Asiento
+    Prefetch('pasajero_datos')            # OneToOne con PerfilPasajero
+)
+
+# PerfilPasajero
+PerfilPasajero.objects.select_related(
+    'pasajero'                            # OneToOne con Pasajero
+)
+
+# Equipaje
+Equipaje.objects.select_related(
+    'pasajero'                            # ManyToOne con Pasajero
+)
+
+# Reserva
+Reserva.objects.select_related(
+    'pasajero',                           # ManyToOne con Pasajero
+    'vuelo'                               # ManyToOne con Vuelo
+)
+
+# Asiento
+Asiento.objects.select_related(
+    'vuelo',                              # ManyToOne con Vuelo
+    'pasajero'                            # ManyToOne con Pasajero
+)
+
+# Servicio
+Servicio.objects.prefetch_related(
+    Prefetch('aeropuerto'),               # ManyToMany con Aeropuerto
+    Prefetch('empleado_servicio')         # ManyToOne con Empleado
+)
+
+# Empleado
+Empleado.objects.select_related(
+    'servicio'                            # ManyToOne con Servicio
+)

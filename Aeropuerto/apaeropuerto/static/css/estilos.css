@@ -16,7 +16,7 @@ body {
 
 .content-section {
     flex: 1; /* Asegura que el contenido ocupe el espacio disponible */
-    margin-top: 10px;
+    margin-top: 70px;
 }
 .container {
     width: 90%;
@@ -27,20 +27,12 @@ body {
     box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
 }
 
-.cabecera-index {
-    color: #2980b9;
-    text-align: center;
-    margin-bottom: 25px;
-    font-size: 2em;
-    margin-top: 130px;
-}
-
 h1 {
     color: #2980b9;
     text-align: center;
     margin-bottom: 25px;
     font-size: 2em;
-    margin-top: 70px;
+    margin-top: 20px;
 }
 
 article {
