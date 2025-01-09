@@ -363,7 +363,6 @@ telefono: Debe tener exactamente 9 dígitos.
 
 widgets usados:
 
-1.placeholder: Texto de ayuda que aparece dentro del campo.
 2.maxlength: Límite máximo de caracteres.
 3.min: Definen el rango de valores minimo.
 4.max: Definen el rango de valores maximo.

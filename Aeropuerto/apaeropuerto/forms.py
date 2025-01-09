@@ -52,8 +52,13 @@ class AeropuertoForm(ModelForm):
             #Comprobamos que no exista un libro con ese nombre
             encontrar_aeropuerto = Aeropuerto.objects.filter(nombre=nombre).first()
 
-            if(encontrar_aeropuerto):
-                self.add_error('nombre','Ya existe un Aeropuerto con ese nombre')
+            if(not encontrar_aeropuerto is None
+           ):
+             if(not self.instance is None and encontrar_aeropuerto.id == self.instance.id):
+                 pass
+             else:
+                self.add_error('nombre','Ya existe un libro con ese nombre')
+
 
             if(nombre == " "):
                 self.add_error("nombre","El nombre del aeropuerto no puede estar vacio")
@@ -96,12 +101,16 @@ class BusquedaAvanzadaAeropuertoForm(forms.Form):
         
         #Obtenemos los campos 
         textoBusqueda = self.cleaned_data.get('textoBusqueda')
+        ciudades = self.cleaned_data.get('ciudades')
+        pais = self.cleaned_data.get('pais')
         
            
         #Controlamos los campos
         #Ningún campo es obligatorio, pero al menos debe introducir un valor en alguno para buscar
-        if(textoBusqueda == ""):
-            self.add_error('textoBusqueda','Debe introducir al menos un valor en un campo del formulario')
+        if(textoBusqueda == "" and ciudades == "" and pais == ""):
+            self.add_error('textoBusqueda','Debe introducir al menos un campo en un campo del formulario',
+                           'ciudades','Debe introducir al menos un campo en un campo del formulario',
+                           'paises','Debe introducir al menos un campo en un campo del formulario')
         else:
             #Si introduce un texto al menos que tenga  1 caracteres o más
             if(textoBusqueda != "" and len(textoBusqueda) < 2):
