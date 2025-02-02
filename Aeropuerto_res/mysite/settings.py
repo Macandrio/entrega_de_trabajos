@@ -14,7 +14,15 @@ from pathlib import Path
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
-BASE_DIR = Path(__file__).resolve().parent.parent
+#BASE_DIR = Path(__file__).resolve().parent.parent
+
+
+import environ
+import os
+
+environ.Env.read_env(os.path.join(BASE_DIR, '.env'),True)
+env = environ.Env()
+SECRET_KEY =  env("SECRET_KEY")
 
 
 # Quick-start development settings - unsuitable for production
@@ -26,9 +34,9 @@ SECRET_KEY = 'django-insecure-#%^z_fc5_yw)4sh(rtp%5@pjl4vw+h=y=&doj20sn=es0xs*9h
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['Macandrio.pythonanywhere.com']
 
 
 # Application definition
