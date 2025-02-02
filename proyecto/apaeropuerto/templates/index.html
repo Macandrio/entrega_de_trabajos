@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio - Sistema de Gestión de Aeropuertos</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f7f7f7;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #2c3e50;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        header a {
+            color: white;
+            text-decoration: none;
+            font-size: 28px;
+        }
+
+        .container {
+            width: 90%;
+            margin: 20px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #2980b9;
+            margin-bottom: 30px;
+        }
+
+        .link-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .link-item {
+            background-color: #3498db;
+            padding: 15px;
+            border-radius: 6px;
+            text-align: center;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s;
+        }
+
+        .link-item a {
+            text-decoration: none;
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .link-item:hover {
+            background-color: #2980b9;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px;
+            background-color: #2c3e50;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1><a href="/">Sistema de Gestión de Aeropuertos</a></h1>
+    </header>
+
+    <div class="container">
+        <h2>Páginas del Sistema del Aeropuerto</h2> <!-- Cambiado de h1 a h2 -->
+        <div class="link-list">
+            <div class="link-item">
+                <a href="{% url 'lista_aeropuerto' %}">Aeropuertos</a>
+            </div>
+            <div class="link-item">
+                <a href="{% url 'lista_vuelo' %}">Vuelos</a>
+            </div>
+            <div class="link-item">
+                <a href="{% url 'lista_pasajero' %}">Pasajeros</a>
+            </div>
+            <div class="link-item">
+                <a href="{% url 'lista_equipaje' %}">Equipajes</a>
+            </div>
+            <div class="link-item">
+                <a href="{% url 'lista_aerolineas' %}">Aerolíneas</a>  
+            </div>
+            <div class="link-item">
+                <a href="{% url 'lista_vuelos_aerolineas' %}">Vuelos de Aerolínea</a>  
+            </div>
+            <div class="link-item">
+                <a href="{% url 'lista_reserva' %}">Reservas</a>
+            </div>
+            <div class="link-item">
+                <a href="{% url 'lista_empleado' %}">Empleados</a>
+            </div>
+            <div class="link-item">
+                <a href="{% url 'lista_silla' %}">Sillas</a>
+            </div>
+            <div class="link-item">
+                <a href="{% url 'lista_servicio' %}">Servicios</a>
+            </div>
+            <div class="link-item">
+                <a href="{% url 'lista_ruta' %}">Rutas</a>
+            </div>
+        </div>
+
+    <footer>
+        &copy; 2024 - Sistema de Aeropuertos
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,29 @@
+<ul class="menu-list">
+    <li class="menu-item">
+        <a href="{% url 'index' %}">Inicio</a> <!-- Enlace al index -->
+    </li>
+    <li class="menu-item">
+        <a href="{% url 'dame_proyecto' %}">Ver Proyectos</a>
+    </li>
+    <li class="menu-item">
+        <a href="{% url 'tareas_por_proyecto' 17 %}">Ver Tareas</a>
+    </li>
+    <li class="menu-item">
+        <a href="{% url 'asignacion_tarea' 33 %}">Ver Asignación de la Tarea</a>
+    </li>
+    <li class="menu-item">
+        <a href="{% url 'texto_observaciones' 'pepe' %}">Ver Observación de la Tarea</a>
+    </li>
+    <li class="menu-item">
+        <a href="{% url 'tarea_completada' 2000 2024 %}">Ver Tarea Completada</a>
+    </li>
+    <li class="menu-item">
+        <a href="{% url 'comentarios_por_palabra_y_anio' 1 'la' 2024 %}">Ver Último Comentario</a>
+    </li>
+    <li class="menu-item">
+        <a href="{% url 'etiquetas_por_proyecto' 22 %}">Ver Etiqueta del Proyecto</a>
+    </li>
+    <li class="menu-item">
+        <a href="{% url 'mostrar_operadores' %}">Ver Operadores</a>
+    </li>
+</ul>

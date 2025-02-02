@@ -1,0 +1,16 @@
+{% extends "principal.html" %}
+    {% block contenido %}
+        <div class="container">
+            <h1>Etiquetas del Proyecto</h1>
+            
+            {% if etiquetas %}
+                <ul>
+                    {% for etiqueta in etiquetas %}
+                    <li>{{ etiqueta.nombre }}</li>
+                    {% endfor %}
+                </ul>
+            {% else %}
+                <p>No hay etiquetas asociadas a las tareas de este proyecto.</p>
+            {% endif %}
+        </div>
+    {% endblock %}

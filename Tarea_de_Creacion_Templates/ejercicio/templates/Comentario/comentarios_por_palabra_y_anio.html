@@ -1,0 +1,19 @@
+{% extends "principal.html" %}
+    {% block contenido %}
+        <div class="container">
+            <h1>Comentarios de la Tarea</h1>
+            
+            {% if comentarios %}
+                {% for comentario in comentarios %}
+                <article>
+                    <p><strong>Contenido:</strong> {{ comentario.contenido }}</p>
+                    <p><strong>Fecha del comentario:</strong> {{ comentario.fecha_comentario }}</p>
+                    <p><strong>Autor:</strong> {{ comentario.autor.nombre }}</p>
+                </article>
+                {% endfor %}
+            {% else %}
+                <p>No hay comentarios que coincidan con los criterios especificados.</p>
+            {% endif %}
+        </div>
+    {% endblock %}
+    

@@ -1,0 +1,19 @@
+{% extends "principal.html" %}
+
+    {% block contenido %}
+        <div class="container">
+            <h2>Tareas Completadas:</h2>
+            <ul>
+                {% for tarea in tareas %}
+                    <li>
+                        <strong>ID:</strong> {{ tarea.id }}<br>
+                        <strong>Fecha Inicio:</strong> {{ tarea.proyectos.fecha_inicio }}<br>
+                        <strong>Fecha Final:</strong> {{ tarea.proyectos.fecha_final }}<br>
+                        <strong>Estado:</strong> {{ tarea.estado|yesno:"Completado,No Completado" }}<br>
+                    </li>
+                {% empty %}
+                    <li>No hay tarea completadas.</li>
+                {% endfor %}
+            </ul>
+        </div>
+    {% endblock %}

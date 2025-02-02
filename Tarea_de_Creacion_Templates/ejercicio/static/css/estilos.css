@@ -1,0 +1,129 @@
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+}
+
+/* Header styles */
+.header-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: #e9f2ff; /* Fondo opcional */
+}
+
+.header-image {
+    height: 80px; /* Ajusta la altura del logo según sea necesario */
+    margin-right: 20px;
+}
+
+.main-title {
+    color: #2c3e50; /* Azul más claro */
+    font-size: 32px;
+    margin: 0;
+    flex-grow: 1;
+}
+
+/* Navigation styles */
+.navigation-section {
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #4c8abd; /* Fondo opcional */
+}
+
+.navigation-section ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: space-around; /* Espacia los elementos uniformemente */
+}
+
+.navigation-section li {
+    margin: 0 15px; /* Espaciado horizontal */
+}
+
+.navigation-section a {
+    text-decoration: none;
+    color: white; /* Color del texto del enlace */
+    font-weight: bold;
+    padding: 10px 15px;
+    transition: background-color 0.3s;
+}
+
+.navigation-section a:hover {
+    background-color: #357ab7; /* Color de fondo al pasar el cursor */
+    border-radius: 4px;
+}
+
+
+/* General content styles */
+.content-section {
+    flex-grow: 1;
+    padding: 20px;
+}
+
+/* Footer styles */
+.footer-section {
+    text-align: center;
+    padding: 20px;
+    background-color: #2c3e50;
+    color: white;
+}
+
+h1 {
+    color: #2980b9;
+    text-align: center;
+    margin-bottom: 25px;
+    font-size: 2em;
+}
+
+article {
+    background-color: #f9f9f9;
+    padding: 20px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s;
+}
+
+article:hover {
+    transform: scale(1.02);
+}
+
+article p {
+    margin: 5px 0;
+}
+
+article strong {
+    color: #333;
+}
+
+footer {
+    text-align: center;
+    margin-top: 30px;
+    padding: 15px;
+    background-color: #3498db;
+    color: white;
+    font-size: 14px;
+}
+
+.refresh {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.refresh a {
+    text-decoration: none;
+    padding: 10px 15px;
+    background-color: #2ecc71;
+    color: white;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.refresh a:hover {
+    background-color: #27ae60;
+}
