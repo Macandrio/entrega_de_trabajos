@@ -1,9 +1,0 @@
-{% for proyecto in proyectos %}
-    <article>
-        <h2>Proyecto</h2>
-            <p><strong>Nombre:</strong> {{ usuario.nombre| lower}}</p>
-            <p><strong>Email:</strong> {{ usuario.email| upper }}</p>
-            <p><strong>Contraseña:</strong> {{ usuario.password|wordcount }}</p>
-            <p><strong>Fecha registro:</strong> {{ usuario.fecha_registro | date:"D M Y"}}</p>
-     </article>
-{% endfor %}
